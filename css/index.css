@@ -9,6 +9,12 @@
     font-family: Arial, Helvetica, sans-serif;
 
 }
+.slide {
+    padding: 5px 15px;
+    border: 2px solid #29ca8e;
+    background-color: #fff;
+    
+}
 header {
     border-top: 5px solid #29ca8e;
     width: 100%;
