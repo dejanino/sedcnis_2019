@@ -1178,7 +1178,6 @@ footer {
         width: 33.33%;
         margin-right: 10px;
         background-color: white;
-        position:
     }
 
     .student-window-h {
@@ -1211,6 +1210,11 @@ footer {
     
     li:hover a {
         color: white;
+    }
+
+    .strelica {
+        font-size: 30px;
+        color: black;
     }
 
     

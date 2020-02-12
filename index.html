@@ -44,21 +44,30 @@
     <main>
         <!-- Slider -->
         <div class="slider">
+            <div class="slider-arrow-left">
+                <i id="strelica-levo" class="fas fa-chevron-left strelica"></i>
+            </div>
             <div id="slider-image">
-                 <img class="top" src="images/slider-image2.jpg" alt="image"/> 
+                 <img id="image" class="top" alt="image"/> 
                  <!-- <img class="bottom" src="slider-image3.jpg" alt="image"/>
                 <img class="middle" src="slider-image1.jpg" alt="image"/>  -->
             </div>
             <div class="slider-text">
                 <div class="slider-heading">
-                    <h1>Start your journey with our practical courses</h1>
+                    <h1 id="sliderHeading"></h1>
+                    <!-- <h1>Start your journey with our practical courses</h1> -->
                 </div>
                 <div class="slider-paragraf">
-                    <p>Our online courses are build in partnership with technology leaders and are designed to meet
-                        industry demands</p>
+                    <p id="sliderParagraf"></p>
+                    <!-- <p>Our online courses are build in partnership with technology leaders and are designed to meet
+                        industry demands</p> -->
                 </div>
+          
                 <a href="#contact" class="big-button btn-white">Let's chat</a>
                 <!-- <a href="#"><button class="big-button">Take a course</button></a> -->
+            </div>
+            <div class="slider-arrow-right">
+                <i id="strelica-desno" class="fas fa-chevron-right strelica"></i>
             </div>
         </div>
         <!-- End Slider -->
@@ -356,6 +365,7 @@
         <!-- End Footer Row 3 -->
     </footer>
     <!-- End Footer -->
+    <script src="index.js"></script>
 </body>
 
 </html>
