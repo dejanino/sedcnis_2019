@@ -1,3 +1,4 @@
+// ja sam dodao ovaj komentar
 var slider = [{
         image: "images/slider-image1.jpg",
         h1: "Efficient Learning Methods",
