@@ -12,33 +12,20 @@
 <body>
     <!-- Header -->
     <header>
-        <div class="logo">
-            <h2>Known</h2>
+        <div class="wrap-header">
+            <div class="logo">
+                <a href="#" class="known">Known</a>
+                <a href="#" class="drop-down-menu fa fa-bars" id="padajuci"></a>
+            </div>
+            <div class="nav" id="zaPorbu"> 
+                <div class="nav-element"><a href="#">Home</a></div>
+                <div class="nav-element"><a href="#">About</a></div>
+                <div class="nav-element"><a href="#">Our Teachers</a></div>
+                <div class="nav-element"><a href="#courses">Courses</a></div>
+                <div class="nav-element"><a href="#">Reviews</a></div>
+                <div class="nav-element"><a href="#">Contact</a></div>
+            </div>
         </div>
-        <!-- Nav -->
-        <div class="nav">
-            <ul class="menu">
-                <a href="#">
-                    <li>Home</li>
-                </a>
-                <a href="#footer">
-                    <li>About</li>
-                </a>
-                <a href="#teachers-container">
-                    <li>Our Teachers</li>
-                </a>
-                <a href="#courses-container">
-                    <li>Courses</li>
-                </a>
-                <a href="#student-container">
-                    <li>Reviews</li>
-                </a>
-                <a href="#footer">
-                    <li>Contact</li>
-                </a>
-            </ul>
-        </div>
-        <!-- End Nav -->
     </header>
     <!-- End Header -->
     <main>
@@ -51,7 +38,7 @@
                 <div class="text-slider active">
                     <h3 class="h3">Start your journey with our practicle courses</h3>
                     <p class="paragraph-slider">Our online courses are built in partnership with technology leaders and are designed to meet industry demands.</p>
-                    <a href="#">Take a course</a>
+                    <a class="anchor" href="#">Take a course</a>
                 </div>
             </div>
         </div>
@@ -186,32 +173,34 @@
         </div>
         <!-- End Teachers -->
         <!-- Courses -->
-        <div class="courses-container" id="courses-container">
-            <div class="courses-header">
-                <h2>Popular Courses</h2>
-                <p>Upgrade your skills with newest courses</p>
-            </div>
-            <div class="courses-image">
-                <img src="images/courses-image5.jpg" alt="image" />
-                <div class="courses-input">
-                    <i class="far fa-calendar-alt"></i>
-                    <h2>5/10/2018</h2>
-                    <i class="far fa-clock"></i>
-                    <h2>10 Hours</h2>
+        <div class="courses-container" id="courses">
+            <h3>Popular Courses</h3>
+            <p class="main-paragprah">Upgrade your skills with newest courses</p>
+            <div class="courses-container-items">  <!--Bice ih vise od 1-->
+                <div class="one-course">
+                    <div class="course-pictures"> 
+                        <img class="course-1" src="images/courses-image1.jpg" alt="">
+                        <div class="calendar-container">
+                            <a class="fa fa-calendar"></a>
+                            <p class="numbers">8 / 10 / 2019</p>
+                            <a class="fa fa-clock-o"></a>
+                            <p class="numbers">6 hours</p>
+                        </div>
+                    </div>
+                    <h4>Business & Managment</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    <div class="select-teacher">
+                        <img class="teacher-1" src="images/author-image1.jpg" alt="">
+                        <p>Mark Wilson</p>
+                        <a href="#" class="teacher-price">Free</a> <!--Nisam siguran da je div, mozda je nesto js-->
+                    </div>
                 </div>
+                
             </div>
-            <div class="courses-text">
-                <h2>Bussines & Management</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-            </div>
-            <div class="courses-avatar">
-                <img src="images/author-image2.jpg" alt="image">
-                <p>Jessica</p>
-                <input class="avatar-input" type="submit" value="Free" />
-            </div>
+        </div>
             <div class="courses-slider">
-                <i class="far fa-caret-square-left"></i>
-                <i class="far fa-caret-square-right"></i>
+                <a href="#" class="strelica-desno far fa-caret-square-left"></a>
+                <a href="#" class="strelica-levo far fa-caret-square-right"></a>
             </div>
         </div>
         <!-- End Courses -->

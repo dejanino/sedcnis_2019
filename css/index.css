@@ -3,11 +3,8 @@
     --color-brown: #252020;
 }
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
-
+    box-sizing: border-box;
 }
 body {
     margin: 0px;
@@ -43,51 +40,87 @@ a:link, a:visited {
     height: 50px;
     width: 100%;
 }
-header {
-    border-top: 5px solid #29ca8e;
-    width: 100%;
-}
-
-.logo {
-    padding: 10px;
-}
-
-.nav {
-    width: 100%;
+header .wrap-header {
     display: flex;
-    text-align: center;
-}
-
-.menu {
-    width: 100%;
-    list-style: none;
-    align-items: center;
     flex-direction: column;
+    border-top: 5px solid #29ca8e;
 }
 
-li {
-    padding: 5px;
+.wrap-header .logo {
+    height: 60px;
+    display: flex;
 }
 
-a {
-    text-decoration: none;
-    color: grey;
-    height: 100%;
+.logo .known {
+    padding-left: 25px;
+    font-size: 25px;
+    font-weight: bold;
+    color: #252020;
+    height: 60px;
+    line-height: 60px;
+    width: 500px;
+    flex: 5;
 }
-
-.nav .menu a li:hover {
+.logo .drop-down-menu {
+   flex: 1;
+   text-align: center;
+   line-height: 60px;
+   font-size: 1.5em;
+}
+.logo a:hover {
+    color: #29ca8e;
+    transition: 1s;
+}
+.nav {
+    display: none;
+    /*display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;*/
+    
+}
+.nav .nav-element {
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+}
+.nav .nav-element:hover {
+    background-color:#29ca8e;
+    transition: 1s;
+}
+.nav-element a:hover {
     color: white;
-    background-color: #29ca8e;
+    transition: 1s;
 }
-
-.dugme {
-    cursor: pointer;
+/*ZA SKRIVANJE FUNKCIJA*/
+@media screen and (max-width: 768px) { /*OGRANICITI NA ODREDJENI MEDIA QUERI!!!!!!!!!!*/
+    .prikazan-nav {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 30px;
+        position: absolute;
+        height: auto;
+        z-index: 100;
+        background-color: white;
+        top: 60px;
+        /*display: none;*/
+        animation: proba .5s linear;
+        height: 0px;
+        opacity: 0;
+        animation-fill-mode: forwards;
+    }
 }
-
-.dugme:hover {
-    color: white;
-    border-color: #29ca8e;
-    background-color: #29ca8e;
+@keyframes proba {
+    100% {
+        height: 300px;
+        opacity: 1;
+    }
 }
 
 /* SLIDER */
@@ -549,10 +582,164 @@ textarea {
 /* COURSES CONTAINER */
 
 .courses-container {
+    text-align: center;
+    margin-top: 30px;
+    height: auto;
+}
+.courses-container h3 {
+    margin-bottom: 0px;
+    font-size: 1.5em;
+}
+.courses-container .main-paragprah {
+    margin-bottom: 30px;
+}
+.courses-container-items {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+.courses-container-items .one-course {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 90vw;
+    background-color: #f9f9f9;
+    margin-bottom: 30px;
+}
+.one-course h4{
+    margin-bottom: 0px;
+    padding-left: 20px;
+}
+.one-course p{
+    text-align: left;
+    padding-left: 20px;
+}
+.one-course .course-pictures {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+/*Course picture + text above it*/
+.course-pictures .course-1, .course-2, .course-3, .course-4 {
+    width: 90vw;
+}
+.course-pictures .calendar-container {
+    position: absolute;
+    bottom: 0px;
     width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-size: 12px;
+}
+.calendar-container a, .numbers {
+    padding: 0px;
+    line-height: 40px;
+    color: white;
+}
+.calendar-container .numbers {
+    padding: 0px 5px;
+    font-size: 14px;
+}
+/*Part about teachers*/
+.select-teacher {
+    position: relative;
+    margin-top: 10px;
+    border-top: 1px solid #575757;
+    display: flex;
+    width: 100%;
+    height: 100px;
+    padding: 20px;
+}
+.select-teacher .teacher-1{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+.select-teacher p{
+    line-height: 60px;
+    color: black;
+    font-weight: bold;
+}
+.select-teacher .teacher-price {
+    position: absolute;
+    right: 20px;
+    bottom: 30px;
+    line-height: 40px;
+    height: 40px;
+    width: 60px;
+    background-color: #3f51b5;
+    border-radius: 2px;
+    color: white;
+}
+/*ALL ABOUT STUDENT REVIEWS*/
+.reviews-container {
+    background-color: #f9f9f9;
+    width: 100%;
+    padding-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.reviews-container h3 {
+    margin-bottom: 0px;
+    font-size: 1.5em;
+    text-align: center;
+    margin-top: 60px;
+}
+.reviews-container p {
+    margin-bottom: 30px;
+    text-align: center;
+}
+.one-student {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 30px;
+    background-color: white;
+    margin: 15px;
+}
+/*Just student with his picture, name and ocupation*/
+.one-student .picture-text{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 40%;
+    height: 80px;
+}
+.picture-text .picture-1{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    align-self: stretch;
+    flex: 1;
+}
+.picture-text h4{
+    margin-bottom: 0px;
+    margin-left: 15px;
+    flex: 1;
+}
+.picture-text .review-small-font {
+    font-size: 12px;
+    margin-left: 15px;
+    width: 100px;
+    flex: 1;
+}
+/*here starts rest of the flex*/
+.one-student .student-comment {
+    margin-top: 15px;
+    text-align: start;
+}
+.one-student .stars {
+    margin-top: 15px;
+    color: #3f51b5;
 }
 
 /* HEADER */
@@ -654,11 +841,15 @@ textarea {
 /* COURSES NAVIGACIJA-SLIDER */
 
 .courses-slider {
+    display: flex;
     width: 100%;
     text-align: center;
     padding: 50px 100px 50px 100px;
     font-size: 30px;
     color: grey;
+}
+.courses-slider > .strelica-levo, .strelica-desno{
+    width: 50px;
 }
 
 /* STUDENT CONTAINER */
