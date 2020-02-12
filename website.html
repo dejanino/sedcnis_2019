@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Website</title>
+
+    <!-- <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" /> -->
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+    <script src="https://kit.fontawesome.com/5e430e9e32.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <p>Known</p>
+        </div>
+        <div class="navigation">
+            <div class="nav active"><a href="">Home</a></div>
+            <div class="nav"><a href="#footer">About</a></div>
+            <div class="nav"><a href="#teachers-container">Our teachers</a></div>
+            <div class="nav"><a href="#courses-container">Courses</a></div>
+            <div class="nav"><a href="#reviews-container">Reviews</a></div>
+            <div class="nav"><a href="#contact-container">Contact</a></div>
+        </div>
+    </header>
+
+
+    <div class="slider">
+        <a href="#" id="left-arrow">
+            <i class="fas fa-arrow-left"></i>
+            <!--  -->
+        </a>
+        <div id="slider-image">
+            <img id="slider-img" class="top" src="images/slider-image1.jpg" alt="image" />
+        </div>
+        <!-- Ovde postavljamo slike za slajder do realizacije javascript
+            
+             <div id="slider-slike">
+                 <img class="top" src="slider-image2.jpg" alt="image"/> 
+                 <img class="bottom" src="slider-image3.jpg" alt="image"/>
+                <img class="middle" src="slider-image1.jpg" alt="image"/> 
+            </div> -->
+
+        <div class="TextInPicture">
+            <h1 id="slider-heading">Efficient Learning Methods</h1>
+            <p>Nam eget sapient...</p>
+            <a href="#"><button class="lets-chat-button">Let´s chat!</button></a>
+        </div>
+        <a href="#" id="right-arrow">
+            <i class="fas fa-arrow-right"></i>
+            <!--  -->
+        </a>
+    </div>
+    <div class="main-container">
+
+        <div class="top-offers fix-width-content">
+            <article>
+                <div class="image">01</div>
+                <h3>Trending Courses</h3>
+                <p>Known is a free educational HTMP Bootstrap template. You can modify it and you are free to use it for
+                    your website.
+                </p>
+            </article>
+            <article>
+                <div class="image">02</div>
+                <h3>Books & Library</h3>
+                <p>You are allowed to use HTML Bootstrap website template for non-commercial and commerical uses.
+                </p>
+            </article>
+            <article>
+                <div class="image">03</div>
+                <h3>Certified Teachers</h3>
+                <p>Please spread a word about us. Template redistribution is NOT allowed on any download website.
+                </p>
+            </article>
+        </div>
+
+        <div class="signup-container fix-width-content" id="signup-container">
+            <div class="signup-items">
+                <div class="form-title">
+                    <h2>
+                        Start your journey to a better life with our practical online courses
+                    </h2>
+                </div>
+                <div class="form-description">
+                    <article>
+                        <div class="image">
+                            <i class="fa fa-users"></i>
+                        </div>
+                        <h3>Professional Trainers</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus consequatur recusandae
+                            eum.
+                        </p>
+                    </article>
+                    <article>
+                        <div class="image">
+                            <i class="fa fa-certificate"></i>
+                        </div>
+                        <h3>International Certifications</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus consequatur recusandae
+                            eum.
+                        </p>
+                    </article>
+                    <article>
+                        <div class="image">
+                            <i class="fa fa-bar-chart" aria-hidden="true"></i>
+                        </div>
+                        <h3>Free for three months</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus consequatur recusandae
+                            eum.
+                        </p>
+                    </article>
+                </div>
+            </div>
+            <div class="form-container">
+                <div class="signup-form">
+                    <h2>Signup today</h2>
+                    <form action="" method="">
+                        <input type="text" name="ime" placeholder="Enter your full name" id="ime" />
+                        <input type="email" name="email" placeholder="Enter your email adress" id="email" />
+                        <input type="password" name="pw" placeholder="Enter your password" id="pw" />
+                        <input class="submit" type="submit" value="Get started!" />
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="teachers-container fix-width-content" id="teachers-container">
+            <div class="container-title">
+                <h2>Teachers</h2>
+                <h5>Meet professional trainers</h5>
+            </div>
+            <div class="teacher-item">
+                <!--    <ul class="social-icon"> -->
+                <div class="teacher-item-image">
+                    <img src="images/author-image1.jpg" alt="image" />
+                </div>
+                <div class="teacher-items-text">
+                    <h3>Mark Wilson</h3>
+                    <h6>I love teaching</h6>
+                </div>
+
+                <div class="teacher-item-icons">
+                    <a href=""><i class="fa fa-facebook-square"></i></a>
+                    <a href=""><i class="fa fa-twitter"></i></a>
+                    <a href=""><i class="fa fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="teacher-item">
+                <div class="teacher-item-image">
+                    <img src="images/author-image2.jpg">
+                </div>
+                <div class="teacher-items-text">
+                    <h3>Catherine</h3>
+                    <h6>Education is the key!</h6>
+                </div>
+                <div class="teacher-item-icons">
+                    <a href=""><i class="fa fa-facebook-square"></i></a>
+                    <a href=""><i class="fa fa-twitter"></i></a>
+                    <a href=""><i class="fa fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="teacher-item">
+                <div class="teacher-item-image">
+                    <img src="images/author-image3.jpg">
+                </div>
+                <div class="teacher-items-text">
+                    <h3>Jessie Ca</h3>
+                    <h6>I like Online Courses</h6>
+                </div>
+                <div class="teacher-item-icons">
+                    <a href=""><i class="fa fa-facebook-square"></i></a>
+                    <a href=""><i class="fa fa-twitter"></i></a>
+                    <a href=""><i class="fa fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="teacher-item">
+                <div class="teacher-item-image">
+                    <img src="images/author-image4.jpg">
+                </div>
+                <div class="teacher-items-text">
+                    <h3>Andrew Berti</h3>
+                    <h6>Learning is fun!</h6>
+                </div>
+
+                <div class="teacher-item-icons">
+                    <a href=""><i class="fa fa-facebook-square"></i></a>
+                    <a href=""><i class="fa fa-twitter"></i></a>
+                    <a href=""><i class="fa fa-instagram"></i></a>
+                </div>
+            </div>
+            <!-- <img src="images\slider-image3.jpg"> 
+                <img src="images\slider-image3.jpg">
+            <div  class="TextInPicture">
+                <h1>Marc Willson</h1>
+                <p>I love teaching</p>  
+
+            <div class="teacher-item">Teacher2</div>
+            <div class="teacher-item">Teacher3</div>
+            <div class="teacher-item">Teacher4</div>-->
+        </div>
+
+        <div class="courses-container fix-width-content" id="courses-container">
+            <div class="container-title">
+                <h2>Popular Courses</h2>
+                <h5>Aaasasasasasa okmokmoknn</h5>
+            </div>
+            <div class="courses-item">
+                <div class="courses-image">
+                    <img src="images/courses-image2.jpg" />
+                    <div class="courses-input">
+                        <i class="fa fa-calendar"></i>
+                        <h2>5/10/2018</h2>
+                        <i class="fa fa-clock-o"></i>
+                        <h2>10 Hours</h2>
+                    </div>
+                </div>
+                <div class="courses-text">
+                    <h3>Graphic & Web Design</h3>
+                    <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h6>
+                </div>
+                <div class="courses-bottom">
+                    <div class="courses-left">
+                        <div class="courses-bottom-image">
+                            <img src="images/author-image2.jpg">
+                        </div>
+                        <span>Jessica</span>
+                    </div>
+                    <button class="courses-price-button">USD 80</button>
+                </div>
+            </div>
+            <div class="courses-item">
+                <div class="courses-image">
+                    <img src="images/courses-image3.jpg">
+                    <h4>Date:20/07/2018 Time:4.5 Hours</h4>
+                </div>
+                <div class="courses-text">
+                    <h3>Marketing Communication</h3>
+                    <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h6>
+                </div>
+                <div class="courses-bottom">
+                    <div class="courses-left">
+                        <div class="courses-bottom-image">
+                            <img src="images/author-image3.jpg">
+                        </div>
+                        <span>Catherine</span>
+                    </div>
+                    <button class="courses-price-button">USD 80</button>
+                </div>
+            </div>
+            <div class="courses-item">
+                <div class="courses-image">
+                    <img src="images/courses-image4.jpg">
+                    <h4>Date:20/07/2018 Time:4.5 Hours</h4>
+                </div>
+                <div class="courses-text">
+                    <h3>Summer Kids</h3>
+                    <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h6>
+                </div>
+                <div class="courses-bottom">
+                    <div class="courses-left">
+                        <div class="courses-bottom-image">
+                            <img src="images/author-image1.jpg">
+                        </div>
+                        <span>Mark Wilson</span>
+                    </div>
+                    <button class="courses-price-button free">Free</button>
+                </div>
+            </div>
+            <div class="courses-slider">
+                <i class="fa fa-caret-square-o-left"></i>
+                <i class="fa fa-caret-square-o-right"></i>
+            </div>
+
+        </div>
+        <div class="reviews-container fix-width-content" id="student-container">
+            <!--Kod nas je bilo id="reviews-container"-->
+            <div class="container-title">
+                <h2>Student Reviews</h2>
+                <h5>from around the world</h5>
+            </div>
+            <div class="reviews-item-container">
+                <div class="reviews-item">
+                    <article>
+                        <div class="StudentReviews1">
+                            <img src="images/tst-image4.jpg" />
+                        </div>
+                        <h3>Andrio</h3>
+                        <h5>Web developer</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur quibusdam iusto,
+                            rem error illum earum nostrum recusandae eum officia id accusamus atque asperiores odit
+                            in nisi ducimus quo laboriosam perferendis!
+                        </p>
+                        <br>
+                        <a href=""><i class="fa fa-star"></i></a>
+                        <a href=""><i class="fa fa-star"></i></a>
+                        <a href=""><i class="fa fa-star"></i></a>
+                        <a href=""><i class="fa fa-star"></i></a>
+                        <a href=""><i class="fa fa-star"></i></a>
+
+                    </article>
+                </div>
+                <div class="reviews-item">
+                    <article>
+                        <div class="StudentReviews1">
+                            <img src="images/tst-image1.jpg" />
+                        </div>
+                        <h3>Jackson</h3>
+                        <h5>Shopify Developer</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur quibusdam iusto,
+                            rem error illum earum nostrum recusandae eum officia id accusamus atque asperiores odit
+                            in nisi ducimus quo laboriosam perferendis!
+                        </p>
+                        <br>
+                        <a href=""><i class="fa fa-star"></i></a>
+                        <a href=""><i class="fa fa-star"></i></a>
+                        <a href=""><i class="fa fa-star"></i></a>
+                    </article>
+                </div>
+                <div class="reviews-item">
+                    <article>
+                        <div class="StudentReviews1">
+                            <img src="images/tst-image2.jpg" />
+                        </div>
+                        <h3>Camila</h3>
+                        <h5>Marketnig manager</h5>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur quibusdam iusto,
+                            rem error illum earum nostrum recusandae eum officia id accusamus atque asperiores odit
+                            in nisi ducimus quo laboriosam perferendis!
+                        </p>
+                        <br>
+                        <a href=""><i class="fa fa-star"></i></a>
+                        <a href=""><i class="fa fa-star"></i></a>
+                        <a href=""><i class="fa fa-star"></i></a>
+                        <a href=""><i class="fa fa-star"></i></a>
+                    </article>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="student-dots">
+        <i class="fa fa-ellipsis-h"></i>
+    </div>
+    </div>
+    <div class="contact-container fix-width-content" id="contact-container">
+        <div class="container-title">
+            <h2>Contact Us</h2>
+            <h5>We love conversations. let us talk!</h5>
+        </div>
+        <div class="contact-form">
+            <input type="name" name="ime" id="ime" class="contact-input" placeholder="Enter Full Name">
+            <input type="email" name="email" id="email" class="contact-input" placeholder="Enter Email Address">
+            <textarea class="contact-textarea" placeholder="Tell us about your message"></textarea>
+            <button class="contact-button" type="submit">
+                <a href="">Send Message</a>
+            </button>
+            <!-- <input type="submit" title="Send Message" value="Send Message" /> -->
+        </div>
+        <div class="contact-image">
+            <img src="images/contact-image.jpg" />
+        </div>
+    </div>
+    <footer class="fix-width-content" id="footer">
+        <div class="footer-container-title">
+            <h2>Headquarter</h2>
+            <h5>1800 dapibus a tortor pretium, Integer nisl dui, ABC 12000</h5>
+            <div class="headq-icons">
+                <a href=""><i class="fa fa-facebook-square"></i></a>
+                <a href=""><i class="fa fa-twitter"></i></a>
+                <a href=""><i class="fa fa-instagram"></i></a>
+                <h5>Copyright &copy; 2019 Company Name</h5>
+                <h5>Design: TemplateMo</h5>
+            </div>
+        </div>
+        <div class="footer-container-title">
+            <div class="contact-details">
+                <h2>Contaact Info</h2>
+                <h5>+65 2244 1100, +66 1800 1100</h5>
+                <a class="contact-email" href="mailto:hello@youremail.co">hello@youremail.co</a>
+            </div>
+            <div class="quick-links">
+                <h2>Quick Links</h2>
+                <div class="ql-tags">
+                    <a href="#">Career</a>
+                    <a href="#">Investor</a>
+                    <a href="#">Terms &amp; Conditions</a>
+                    <a href="#">Refund Policy</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-container-title">
+            <h2>Newsletter Signup</h2>
+            <input class="email-last" type="email" name="email" placeholder="Enter your email">
+            <button class="contact-button-last" type="submit">
+                <a href="">Send me</a>
+            </button>
+            <h5>*Please note-we do not spam your mail</h5>
+        </div>
+    </footer>
+    <script src="javaskript_menjanje.js"></script>
+</body>
+
+</html>

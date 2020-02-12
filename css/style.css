@@ -1,0 +1,796 @@
+* {
+    /*font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    */
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+
+.nav.active, .nav:hover {
+    background-color: #29ca8e;
+}
+
+.nav.active a, .nav:hover a {
+    color: white;
+}
+
+body {
+    margin: 0;
+}
+
+a, a:visited, a:active {
+    color: #666;
+}
+
+img {
+    width: 100%;
+}
+
+header {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+header .logo {
+    height: 50px;
+}
+
+.logo p {
+    margin-left: 1.5vw;
+    margin-right: 1.5vw;
+}
+
+.navigation {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.nav {
+    color: black;
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+}
+
+.nav a {
+    font-size: 14px;
+    padding: 15px;
+    display: inline-block;
+    width: 100%;
+    text-decoration: none;
+}
+
+.nav a.active, .nav a:hover {
+    background-color: #29ca8e;
+    color: white;
+}
+
+.nav a.active .slider {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    /*flex-wrap: wrap; 
+    display: flex; */
+}
+
+.slider {
+    position: relative;
+}
+
+.slider .lets-chat-button {
+    background-color: transparent;
+    height: 5vw;
+    width: 15vw;
+    border-radius: 25px;
+    color: white;
+    border: 2px solid white;
+    cursor: pointer;
+    /*border-color: white;
+    border-width: 2px;
+    border-style: solid;*/
+}
+
+header, .slider, .main-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.TextInPicture {
+    padding: 20px;
+    width: 80%;
+    position: absolute;
+    top: 30%;
+    left: 20px;
+    color: white;
+}
+
+.slider img {
+    width: 100%;
+}
+#left-arrow,
+#right-arrow {
+    top: 50%;
+    position: absolute;
+    background: #fff;
+    width: 25px;
+    HEIGHT: 25px;
+    z-index: 1;
+}
+
+#right-arrow {
+    right: 6px;
+}
+
+#left-arrow {
+    left: 6px;
+}
+
+#left-arrow i,
+#right-arrow i {
+    text-align: center;
+    line-height: 25px;
+    width: 100%;
+}
+
+
+.teachers-container {
+    /*background-color: gray;*/
+    width: 100%;
+}
+
+.reviews-container {
+    width: 100%;
+    background: whitesmoke;
+}
+
+.container-title {
+    width: 100%;
+    text-align: center;
+}
+
+.top-offers {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+.top-offers article {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid lightgrey;
+    margin-right: 10px;
+}
+
+article h3 {
+    margin: 0;
+    line-height: 25px;
+}
+
+article p {
+    margin: 0;
+    margin-top: 5px;
+}
+
+.image {
+    margin-right: 15px;
+    line-height: 50px;
+    height: 50px;
+    width: 50px;
+    background-color: #3f51b5;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 20px;
+    float: left;
+}
+
+.form-description .image {
+    background-color: #229955;
+}
+
+/*.top-offers:hover article h3 {
+    letter-spacing: 20px;
+}
+
+.top-offers:hover article .image {
+    background: red;
+}*/
+
+.signup-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 10px;
+}
+
+.signup-container .signup-items .form-title {
+    width: 100%;
+}
+
+.form-description {
+    width: 100%;
+    /*background: whitesmoke; */
+    padding-left:20px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    width: 80%;
+    justify-content: center;
+}
+
+.signup-form {
+    width: 35vw;
+    height: 35vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: black;
+    border-radius: 50%;
+    /*margin-bottom: 5px;*/
+    margin-left: 5px;
+    margin-top: 5px;
+    justify-content: center;
+}
+
+.signup-form input {
+    background: transparent;
+    color: white;
+    font-size: 1.3em;
+    padding: 0;
+    border: none;
+    border-bottom: 1px solid white;
+    outline: none;
+    height: 40px;
+    margin-bottom: 5px;
+}
+
+.signup-form input.submit {
+    border-radius: 20px;
+    background-color: white;
+    border: 1px solid white;
+    color: black;
+    width: 150px;
+    margin: auto;
+    margin-top: 15px;
+}
+
+.form-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.signup-form h2 {
+    text-align: center;
+    color: white;
+    margin: 0;
+}
+
+.teachers-container .teacher-item {
+    /*border-left: 2px solid white;*/
+    border-right: 2px;
+    width: 100%;
+    padding: 15px;
+    /*background: white;
+    /*position: absolute;*/
+    /*border: 5px;
+      box-sizing: border-box;
+      width: auto;*/
+    /*height: 100%;
+    width: 100%;
+    position: relative;*/
+}
+
+.teachers-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    background-color: #f9f9f9;
+    ;
+    padding: 20px;
+}
+
+.teacher-item i {
+    color: black;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+}
+
+.teacher-item i:hover {
+    color: white;
+    background-color: #29ca8e;
+    border-radius: 30px;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    padding: 0;
+}
+
+.teacher-items .teacher-items-text {
+    background-color: white;
+}
+
+.teacher-item .teacher-item-icons {
+    display: flex;
+    flex-direction: row;
+    font-size: 20px;
+    justify-content: space-evenly;
+    background-color: white;
+}
+
+.courses-container .courses-item {
+    border-left: 5px solid white;
+    border-right: 5px;
+    width: 100%;
+    background: white;
+}
+
+.courses-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.courses-item .courses-image {
+    position: relative;
+}
+
+.courses-input {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    color: white;
+    bottom: 10%;
+    padding: 10px;
+    bottom: 3%;
+    left: 3%;
+}
+
+.courses-input h2 {
+    padding: 0 15px 0 5px;
+}
+
+.courses-input i {
+    font-size: 23px;
+    
+}
+
+.courses-text {
+    padding: 20px;
+}
+
+.courses-text h3 {
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.courses-text h6 {
+    margin: 0;
+}
+
+.courses-bottom {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.courses-left {
+    display: flex;
+    align-items: center;
+}
+
+.courses-bottom-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #666;
+    margin-right: 10px;
+}
+
+.courses-bottom-image img {
+    width: 100%;
+}
+
+.courses-price-button {
+    height: 40px;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    background: #29ca8e;
+    color: white;
+    padding: 0 15px;
+}
+
+.courses-price-button.free {
+    background: #3f51b5;
+}
+
+.courses-slider {
+    width: 100%;
+    text-align: center;
+    padding: 50px 100px 50px 100px;
+    font-size: 30px;
+    color: grey;
+}
+
+.reviews-container .reviews-item-container {
+    border-left: 5px solid whitesmoke;
+    border-right: 5px;
+    width: 90%;
+    background: white;
+    margin: auto;
+}
+
+.reviews-container .reviews-item-container .reviews-item {
+    border-left: 5px solid whitesmoke;
+    border-right: 5px;
+    width: 100%;
+    background: white;
+    padding: 20px;
+}
+
+.reviews-item .StudentReviews1 {
+    display: inline-block;
+    /*float: left;*/
+    width: 60px;
+    height: 60px;
+    margin-right: 15px;
+}
+
+.reviews-item .StudentReviews1 img {
+    border: 1px solid transparent;
+    border-radius: 50%;
+}
+
+.reviews-item h5 {
+    margin: 0;
+}
+
+.reviews-item i {
+    color: #3f51b5;
+}
+
+.reviews-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.student-dots {
+    display: flex;
+    flex-direction: row;
+    padding: 50px 100px 50px 100px;
+    justify-content: center;
+    font-size: 30px;
+    color: grey;
+}
+
+.contact-container {
+    width: 100%;
+    width: 100%;
+    background: #3f51b5;
+}
+
+.contact-container .container-title {
+    color: white;
+}
+
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: auto;
+}
+
+.contact-textarea, .contact-button, .contact-input {
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 10px;
+    padding-left: 15px;
+}
+
+.contact-textarea {
+    height: 80px;
+    padding-top: 15px;
+}
+
+.contact-button {
+    border-radius: 20px;
+    background: white;
+    padding: 0;
+}
+
+.contact-image {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    width: 90%;
+}
+
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    /*justify-content: center;*/
+    background: #252020;
+}
+
+.footer-icon i:hover {
+    color: lightgrey;
+}
+
+.contact-email:hover {
+    color: lightgrey;
+}
+
+.footer-container-title {
+    color: white;
+    width: 100%;
+    padding: 20px
+}
+
+.footer-container-title i {
+    color: #29ca8e;
+    height: 20px;
+    padding: 0 10px;
+}
+
+.footer-container-title h5 {
+    color: grey;
+}
+
+.footer-container-title .email-last {
+    border: 0;
+    height: 40px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background-color: transparent;
+    border-bottom: 1px solid grey;
+    display: flex;
+    width: 100%;
+    color: gray;
+}
+
+.contact-button-last {
+    height: 40px;
+    width: 200px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding-left: 15px;
+    border-radius: 20px;
+    background: #252020;
+    padding: 0;
+}
+
+@media screen and (min-width: 600px) {
+    .signup-container {
+        width: 100%;
+    }
+    .form-description article {
+        margin-bottom: 50px;
+        width: 100%;
+        padding-right: 0px;
+        padding-left: 0px;
+        margin-top: 40px;
+    }
+    .signup-form {
+        width: 100vw;
+        height: 100vw;
+    }
+    .signup-form input {
+        font-size: 0.9em;
+    }
+    .courses-input i {
+       
+        display: flex;
+        flex-direction: row;
+        color: white;
+        bottom: 10%;
+        padding: 20px;
+        bottom: 3%;
+        left: 3%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .signup-container {
+        width: 100%;
+    }
+
+    .form-description article {
+        margin-bottom: 50px;
+        width: 100%;
+        padding-right: 0px;
+        padding-left: 0px;
+        margin-top: 40px;
+    }
+    .signup-form {
+        width: 100vw;
+        height: 100vw;
+    }
+    .signup-form input {
+        font-size: 0.9em;
+    }
+    .courses-input i {
+       
+        display: flex;
+        flex-direction: row;
+        color: white;
+        bottom: 10%;
+        padding: 20px;
+        bottom: 3%;
+        left: 3%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .logo {
+        width: 100px;
+        margin-right: 100px;
+        height: 50px;
+        padding: 0 20px;
+    }
+    .logo p {
+        line-height: 50px;
+        margin: 0;
+    }
+    .navigation {
+        width: calc(100% - 200px);
+    }
+    .nav {
+        width: auto;
+        height: 100%;
+    }
+    .nav a {
+        width: 100%;
+        height: 100%;
+        display: block;
+        padding: 0 15px;
+        line-height: 50px;
+    }
+    .top-offers {
+        flex-wrap: nowrap;
+    }
+    article {
+        width: 100%;
+    }
+    .form-description article {
+        width: 100%;
+        margin-bottom: 50px;
+        padding-right: 0px;
+        padding-left: 0px;
+        margin-top: 40px;
+    }
+    .form-description {
+        width: 100%;
+       
+    }
+    .signup-container {
+        padding-left: 0 5px;
+        padding-right: 0 5px;
+    }
+    .signup-container .signup-form {
+        width: 35vw;
+        height: 35vw;
+    }
+    .signup-container .signup-items {
+        width: 100%;
+    }
+    element.style {
+        font-size: 0.7em;
+    }
+    .teachers-container .teacher-item {
+        width: 50%;
+    }
+    .teachers-container {
+        width: 100%;
+    }
+    .reviews-item-container {
+        width: 100%;
+        background: whitesmoke;
+        display: flex;
+    }
+    .reviews-container .reviews-item {
+        width: 100%;
+    }
+    .reviews-container {
+        width: 100%;
+        height: 400px;
+        padding-bottom: 15px;
+    }
+    .img {
+        width: 50%;
+    }
+    .footer-container-title {
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    header {
+        padding: 0 calc((100% - 1000px) / 2);
+    }
+    .signup-container {
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+    .signup-container .form-description {
+        width: 100%;
+    }
+    .signup-container .signup-form {
+        width: 30vw;
+        height: 30vw;
+        margin-bottom: 5px;
+        margin-top: 5px;
+    }
+    .signup-container .signup-items {
+        padding: 10px;
+    }
+    .signup-container .form-container .signup-form {
+        width: 400px;
+        height: 400px;
+    }
+    .teachers-container .teacher-item {
+        width: 25%;
+    }
+    .teachers-container {
+        width: 100%;
+    }
+    .courses-container .courses-item {
+        width: calc(100%/ 3);
+    }
+    .courses-container .courses-item h4 {
+        font-size: 1.8vw;
+    }
+    .courses-container {
+        width: 100%;
+    }
+    .reviews-container .reviews-item-container {
+        width: 100%;
+        margin: auto;
+        background: whitesmoke;
+        display: flex;
+    }
+    .reviews-container .reviews-item {
+        width: calc(100%/ 3);
+        background: whitesmoke;
+    }
+    .reviews-container .reviews-item article {
+        background: white;
+    }
+    .reviews-container {
+        width: 100%;
+        height: 400px;
+    }
+    .footer-container-title {
+        width: calc(100%/ 3);
+    }
+    .container-title {
+        width: 100%;
+    }
+    .contact-form, .contact-image {
+        width: 50%;
+        padding: 20px;
+    }
+    .fix-width-content {
+        padding: 30px calc((100% - 990px) / 2);
+    }
+}

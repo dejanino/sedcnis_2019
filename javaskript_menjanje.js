@@ -29,7 +29,7 @@ function slideChange(index) {
     }
 
     sliderImage.src = slider[currentIndex].image
-        sliderHeading.textContent = slider[currentIndex].h1
+    sliderHeading.textContent = slider[currentIndex].h1
 
     console.log(currentIndex);
     //sliderImage.src = src
