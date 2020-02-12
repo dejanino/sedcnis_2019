@@ -140,6 +140,10 @@ a {
     background: #fff;
     width: 25px;
     HEIGHT: 25px;
+<<<<<<< HEAD
+=======
+    z-index: 1;
+>>>>>>> vladimir.lukic
 }
 
 #right-arrow {
@@ -1152,7 +1156,7 @@ footer {
         width: 33.33%;
         margin-right: 10px;
         background-color: white;
-        position:
+        
     }
     .student-window-h {
         display: flex;
