@@ -1,6 +1,6 @@
 var slider = [{
     image: "images/slider-image1.jpg",
-    title: "Start your journey with our practical courses",
+    title: "Start your journey with our practical courses AAAA",
     description: "Our online courses are build in partnership with technology leaders and are designed to meet industry demands",
     url: ""
 },
@@ -47,6 +47,8 @@ function changeSlide(index){
 
     console.log(currentIndex);
 }
+
+changeSlide(0);
 
 prev.addEventListener("click", function(){
     changeSlide(-1);
