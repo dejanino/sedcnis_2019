@@ -2,6 +2,7 @@
     --color: #29ca8e;
     --color-brown: #252020;
 }
+
 * {
     padding: 0;
     margin: 0;
@@ -9,12 +10,15 @@
     font-family: Arial, Helvetica, sans-serif;
 
 }
+
 .slide {
     padding: 5px 15px;
     border: 2px solid #29ca8e;
     background-color: #fff;
-    
 }
+
+
+
 header {
     border-top: 5px solid #29ca8e;
     width: 100%;
@@ -66,16 +70,114 @@ a {
 
 .slider {
     width: 100%;
-    background-color:white;
+    /* background-color: white; */
     height: 80vh;
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-top: 20px;
+    background-image: url('../images/slider-image1.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.bgc-position {
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* ? New CSS */
+.dots {
     display: flex;
-    color:white;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translate(10%, 50%);
+}
+.slider-dot {
+    color: #fff;
+    font-size: 18px;
+    display: block;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.dot-one:hover {
+    color: var(--color);
+}
+.dot-two:hover {
+    color: var(--color);
+}
+.dot-three:hover {
+    color: var(--color);
+}
+
+.active-dot {
+    color: var(--color);
+}
+.wrapper {
+    height: 80vh;
+    width: 100%;
+    /* position: relative; */
+    top: 0;
+    left: 0;
+    display: flex;
+    color: white;
     text-align: left;
     justify-content: center;
     align-content: center;
     overflow: hidden;
-    position: relative;
-    margin-top: 20px;
+    position: absolute;
+    background-color: #0000005b;
+}
+
+/* Arrow slider */
+.slider-change {
+    width: 10%;
+    text-align: center;
+    position: absolute;
+    position: absolute;
+
+}
+
+.slider-change-left {
+    left: 5%;
+    top: 50%;
+    transform: translate(-5%, -50%);
+}
+
+.slider-change-right {
+    right: 5%;
+    top: 50%;
+    transform: translate(-5%, -50%);
+}
+
+.arrow-slide {
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.arrow-slide:hover {
+    color: #29ca8e;
+}
+
+.arrow-slide:focus {
+    outline: none;
+}
+
+
+
+/* Slider Content */
+.slider-content {
+    width: 80%;
+}
+
+.slider-image {
+    width: 100%;
 }
 
 /* #slider-slike {
@@ -145,13 +247,20 @@ img {
     align-content: center;
 }
 
-/* TEXT PREKO SLIKE */
+/* TEXT PREKO SLIKfE */
 
-.slider-text{
+.slider-text {
     position: absolute;
+    top: 70%;
+    left: 40%;
+    transform: translate(-40%, -70%);
     padding: 20px;
     bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
 
 /* DUGME ISPOD SLIKE */
 
@@ -164,26 +273,26 @@ img {
     width: 160px;
     margin-top: 30px;
     display: inline-block;
-    text-align: center ;
+    text-align: center;
     line-height: 58px;
 }
 
 .btn-white-animated {
-  animation: moveInBottom 0.9s ease-out .75s;
-  animation-fill-mode: backwards;
+    animation: moveInBottom 0.9s ease-out .75s;
+    animation-fill-mode: backwards;
 }
 
 .btn-white:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.226);
-  background-color: var(--color);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.226);
+    background-color: var(--color);
 }
 
 .btn-white:active {
-  transform: translateY(-1px);
-  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.226);
+    transform: translateY(-1px);
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.226);
 }
-  
+
 .btn-white:focus {
     outline: none;
 }
@@ -231,7 +340,7 @@ img {
     justify-content: center;
     align-items: center;
     margin-bottom: 20px;
-    
+
 }
 
 /* HEADER U PROZORU */
@@ -294,13 +403,15 @@ img {
     flex-flow: column wrap;
     align-items: center;
     padding: 20px;
-}  
+}
 
 .signup-form form {
     width: 80%;
 }
 
-.signup-form form input[type=text], input[type=password], input[type=email] {
+.signup-form form input[type=text],
+input[type=password],
+input[type=email] {
     width: 100%;
 }
 
@@ -409,7 +520,7 @@ textarea {
     justify-content: space-evenly;
 }
 
-.teacher-icon i{
+.teacher-icon i {
     color: black;
     width: 35px;
     height: 35px;
@@ -450,7 +561,7 @@ textarea {
     width: 90%;
 }
 
-.courses-image img{
+.courses-image img {
     width: 100%;
 }
 
@@ -622,7 +733,8 @@ textarea {
 
 /* NAME I EMAIL */
 
-.contact-form input[name],input[email] {
+.contact-form input[name],
+input[email] {
     width: 100%;
     height: 40px;
     margin-bottom: 15px;
@@ -728,11 +840,11 @@ footer {
     color: white;
 }
 
-.contact-info h2{
+.contact-info h2 {
     padding-bottom: 20px;
 }
 
-.contact-info p{
+.contact-info p {
     padding-bottom: 20px;
     line-height: 0.3em;
     color: grey;
@@ -786,7 +898,7 @@ footer {
     margin-bottom: 15px;
     background-color: transparent;
     border-bottom: 1px solid grey;
-    
+
 }
 
 .newsl-submit {
@@ -821,225 +933,225 @@ footer {
 
 @media screen and (min-width:768px) {
 
-header {
-    display: flex;
-    flex-direction: row;
-}
+    header {
+        display: flex;
+        flex-direction: row;
+    }
 
-.logo {
-    margin: 15px;
-    width: auto;
-}
+    .logo {
+        margin: 15px;
+        width: auto;
+    }
 
-li {
-    padding: 10px;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+    li {
+        padding: 10px;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
-.menu {
-    display: flex;
-    flex-direction: row;
-}
+    .menu {
+        display: flex;
+        flex-direction: row;
+    }
 
-/* SLIDER */
+    /* SLIDER */
 
-.slider {
-    margin-top: 0px;
-}
+    .slider {
+        margin-top: 0px;
+    }
 
-/* TEXT PREKO SLIKE */
+    /* TEXT PREKO SLIKE */
 
-.slider-text{
-    bottom: 100px;
-}
+    .slider-text {
+        bottom: 100px;
+    }
 
-/* OFFERS CONTAINER */
+    /* OFFERS CONTAINER */
 
-.top-offers {
-    flex-direction: row;
-    padding: 20px;
-}
+    .top-offers {
+        flex-direction: row;
+        padding: 20px;
+    }
 
-/* OFFERS PROZOR */
+    /* OFFERS PROZOR */
 
-.offers-window {
-    padding: 35px;
-    margin-right: 10px;
-    justify-content: flex-start;
-}
+    .offers-window {
+        padding: 35px;
+        margin-right: 10px;
+        justify-content: flex-start;
+    }
 
-/* HEADER U SIGNUPU */
+    /* HEADER U SIGNUPU */
 
-.signup-header {
-    font-size: 14px;
-}
+    .signup-header {
+        font-size: 14px;
+    }
 
-.signup-window {
-    padding-right: 100px;
-}
+    .signup-window {
+        padding-right: 100px;
+    }
 
-/* RAZMAK ZA PARAGRAF I H2 */
+    /* RAZMAK ZA PARAGRAF I H2 */
 
-.signup-window p {
-    line-height: 1.5em;   
-}
+    .signup-window p {
+        line-height: 1.5em;
+    }
 
-.signup-window h2 {
-    line-height: 1.3em;
-}
+    .signup-window h2 {
+        line-height: 1.3em;
+    }
 
-/* SIGNUP FORMA */
+    /* SIGNUP FORMA */
 
-.signup-form {
-    border-radius: 50%;
-    height: 40vw;
-    width: 40vw;
-    flex-direction: column;
-    justify-content: center;
-    margin-left: 20px;
-    margin-bottom: 25px;  
-}
+    .signup-form {
+        border-radius: 50%;
+        height: 40vw;
+        width: 40vw;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 20px;
+        margin-bottom: 25px;
+    }
 
-.signup-form-submit {
-    padding: 0 20px;
-    background-color: white;
-    color: black;
-    border: 1px solid white;
-    border-radius: 23px;
-    width: auto;
-    margin-top: 20px;
-    line-height: 40px;
-}
+    .signup-form-submit {
+        padding: 0 20px;
+        background-color: white;
+        color: black;
+        border: 1px solid white;
+        border-radius: 23px;
+        width: auto;
+        margin-top: 20px;
+        line-height: 40px;
+    }
 
-/* TEACHERS CONTAINER */
+    /* TEACHERS CONTAINER */
 
-.teachers-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    text-align: center;
-    padding-bottom: 60px;
-}
+    .teachers-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        text-align: center;
+        padding-bottom: 60px;
+    }
 
-/* TEXT U HEADERU */
+    /* TEXT U HEADERU */
 
-.teachers-header {
-    padding: 20px;
-    margin: 0 0 15px 0;
-    width: 100%;
-}
+    .teachers-header {
+        padding: 20px;
+        margin: 0 0 15px 0;
+        width: 100%;
+    }
 
-/* TEACHER PROZOR */
+    /* TEACHER PROZOR */
 
-.teacher {
-    width: 50%;
-    padding: 15px;
-}
+    .teacher {
+        width: 50%;
+        padding: 15px;
+    }
 
-.teachers-header p {
-    color: grey;
-    line-height: 1.6em;
-}
+    .teachers-header p {
+        color: grey;
+        line-height: 1.6em;
+    }
 
-/* TEKST U PROZORU */
+    /* TEKST U PROZORU */
 
-.teachers-text {
-    text-align: left;
-    background-color: white;
-}
+    .teachers-text {
+        text-align: left;
+        background-color: white;
+    }
 
-/* SOCIAL IKONICE */
+    /* SOCIAL IKONICE */
 
-.teachers-icons {
-    border-top: 3px solid #f9f9f9;
-    padding: 10px;
-}
+    .teachers-icons {
+        border-top: 3px solid #f9f9f9;
+        padding: 10px;
+    }
 
-.teachers-icons a{
-    font-size: 15px;
-    line-height: 45px;
-}
+    .teachers-icons a {
+        font-size: 15px;
+        line-height: 45px;
+    }
 
-/* HEADER */
+    /* HEADER */
 
-.courses-header {
-    padding-top: 50px;
-    margin-bottom: 40px;
-}
+    .courses-header {
+        padding-top: 50px;
+        margin-bottom: 40px;
+    }
 
-/* SLIKA */
+    /* SLIKA */
 
-.courses-image {
-    width: 90%;
-}
+    .courses-image {
+        width: 90%;
+    }
 
-/* DATUM I VREME */
+    /* DATUM I VREME */
 
-.courses-input {
-    bottom: 3%;
-    left: 3%;
-}
+    .courses-input {
+        bottom: 3%;
+        left: 3%;
+    }
 
-/* AVATAR CONTAINER */
+    /* AVATAR CONTAINER */
 
-.courses-avatar {
-    justify-content: start;
-}
+    .courses-avatar {
+        justify-content: start;
+    }
 
-/* PARAGRAF */
+    /* PARAGRAF */
 
-.courses-avatar p {
-    margin-left: 20px;
-}
+    .courses-avatar p {
+        margin-left: 20px;
+    }
 
 
-/* FREE BUTTON */
+    /* FREE BUTTON */
 
-.avatar-input {
-    margin-left: auto;
-}
+    .avatar-input {
+        margin-left: auto;
+    }
 
-/* STUDENT CONTAINER */
+    /* STUDENT CONTAINER */
 
-.avatar-text {
-    margin-top: 10px;
-}
+    .avatar-text {
+        margin-top: 10px;
+    }
 
-.student-window-h {
-    display: none;
-}
+    .student-window-h {
+        display: none;
+    }
 
-/* CONTACT CONTAINER */
+    /* CONTACT CONTAINER */
 
-footer {
-    width: 100%;
-    height: 100%;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
+    footer {
+        width: 100%;
+        height: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
 
-.headquarter {
-    width: 50%;
-}
+    .headquarter {
+        width: 50%;
+    }
 
-.contact-info {
-    margin-top: 0px;
-}
+    .contact-info {
+        margin-top: 0px;
+    }
 
-.contact-quicklinks {
-    width: 50%;
-}
+    .contact-quicklinks {
+        width: 50%;
+    }
 
-.newsletter {
-    width: 100%;
-}
+    .newsletter {
+        width: 100%;
+    }
 
-.newsl-submit {
-    width: 50%;
-}
+    .newsl-submit {
+        width: 50%;
+    }
 
 }
 
@@ -1110,7 +1222,7 @@ footer {
         height: 0px;
     } */
 
-    .teacher-icon i{
+    .teacher-icon i {
         color: black;
         font-size: 15px;
         width: 35px;
@@ -1118,7 +1230,7 @@ footer {
         line-height: 35px;
         text-align: center;
     }
-    
+
 
     .courses-container {
         padding: 0 calc((100% - 900px) / 2);
@@ -1137,8 +1249,8 @@ footer {
 
     .contact-form {
         width: 50%;
-    }   
-    
+    }
+
     .contact-form-input {
         width: 100%;
     }
@@ -1169,7 +1281,7 @@ footer {
         width: 33.33%;
         margin-top: 0px;
     }
-    
+
     .student-container {
         padding: 0 calc((100% - 900px) / 2);
     }
@@ -1210,15 +1322,16 @@ footer {
         color: grey;
         height: 100%;
     }
+
     .nav .menu a:hover {
         background-color: #29ca8e;
         color: white;
     }
-    
+
     li:hover a {
         color: white;
     }
 
-    
+
 
 }

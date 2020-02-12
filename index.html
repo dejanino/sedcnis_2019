@@ -44,23 +44,38 @@
     <main>
         <!-- Slider -->
         <div class="slider">
-            <div id="slider-image">
-                 <img id="image" class="top" src="images/slider-image1.jpg" alt="image"/>
-            </div>
-            <div class="slider-text">
-                <div>
-                    <button id="left" class="slide">Left</button>
-                <button id="right" class="slide">Right</button>
+            <div class="wrapper" >
+                <div id="slider-image">
+                    <!-- <img id="image" class="top" src="images/slider-image1.jpg" alt="image" /> -->
                 </div>
-                
-                <div class="slider-heading">
-                    <h1>Start your journey with our practical courses
-                    </h1>
+                <div class="slider-change slider-change-left">
+                    <i class="fas fa-arrow-left arrow-slide" id="left"></i>
                 </div>
-                <div class="slider-paragraf">
-                    <p id="para">Our online courses are build in partnership with technology leaders and are designed to meet industry demands</p>
+                <div class="slider-text">
+                    
+                    <div class="slider-content">
+                        <div class="slider-heading">
+                            <h1>Start your journey with our practical courses
+                            </h1>
+                        </div>
+                        <div class="slider-paragraf">
+                            <p id="para">Our online courses are build in partnership with technology leaders and are
+                                designed to meet industry demands</p>
+                        </div>
+                        <a id="btnUrl" href="https://www.google.com/" class="big-button btn-white" target="_blank">Let's
+                            chat</a>
+                    </div>
+
+                    
                 </div>
-                <a id="btnUrl" href="https://www.google.com/" class="big-button btn-white" target="_blank">Let's chat</a>
+                <div class="slider-change slider-change-right">
+                    <i class="fas fa-arrow-right arrow-slide" id="right"></i>
+                </div>
+                <div class="dots">
+                    <i class="fas fa-dot-circle slider-dot dot-one active-dot"></i>
+                    <i class="fas fa-dot-circle slider-dot dot-two"></i>
+                    <i class="fas fa-dot-circle slider-dot dot-three"></i>
+                </div>
             </div>
         </div>
         <!-- End Slider -->
