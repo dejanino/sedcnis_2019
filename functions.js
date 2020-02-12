@@ -57,6 +57,9 @@ next.addEventListener("click", function(){
     changeSlide(+1);
 });
 
+window/addEventListener("resize", function(){
+    //check window width
+});
 
 
 

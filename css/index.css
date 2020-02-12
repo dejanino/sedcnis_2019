@@ -1058,6 +1058,10 @@ footer {
 
 }
 
+#courses-container-desktop {
+    display: none;
+}
+
 @media screen and (min-width:992px) {
 
     header {
@@ -1133,10 +1137,33 @@ footer {
         line-height: 35px;
         text-align: center;
     }
-    
+    #courses-container-mobile{
+        display: none;
+    }
+    #courses-container-desktop{
+        display: flex;
+    }
+
+    .courses-header{
+        width: 100%;
+        display: inline-block;
+
+    }
 
     .courses-container {
         padding: 0 calc((100% - 900px) / 2);
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+
+    .courses-container .one{
+        width: calc(100% / 3);
+    }
+
+    .avatar-input {
+        margin-left: 10px !important;
+        padding: 0 20px;
     }
 
     .contact-container {
