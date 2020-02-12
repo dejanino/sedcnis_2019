@@ -349,21 +349,21 @@ form {
 .courses-input {
     position: absolute;
     display: flex;
-    flex-direction: row;
+    align-items: center;
     color: white;
-    bottom: 10%;
-    padding: 10px;
-    bottom: 3%;
-    left: 3%;
+    bottom: 0;
+    padding: 4vw;
+    font-size: 16px;
 }
 
 .courses-input h2 {
-    padding: 0 15px 0 5px;
+    margin: 0;
+    margin-right: 20px;
 }
 
 .courses-input i {
-    font-size: 23px;
-    
+    margin-right: 5px;
+    font-size: 1.2em;
 }
 
 .courses-text {
@@ -598,15 +598,8 @@ footer {
     .signup-form input {
         font-size: 0.9em;
     }
-    .courses-input i {
-       
-        display: flex;
-        flex-direction: row;
-        color: white;
-        bottom: 10%;
-        padding: 20px;
-        bottom: 3%;
-        left: 3%;
+    .courses-input {
+        padding: 10px;
     }
 }
 
@@ -630,14 +623,6 @@ footer {
         font-size: 0.9em;
     }
     .courses-input i {
-       
-        display: flex;
-        flex-direction: row;
-        color: white;
-        bottom: 10%;
-        padding: 20px;
-        bottom: 3%;
-        left: 3%;
     }
 }
 
