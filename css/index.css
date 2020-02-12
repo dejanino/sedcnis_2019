@@ -41,6 +41,27 @@ a {
     height: 100%;
 }
 
+#prev, #next {
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    font-size: 20px;
+    color: red ;
+}
+
+#prev{
+    left: 10px;
+}
+
+#next{
+    right: 10px;
+}
+
+
+
 .nav .menu a li:hover {
     color: white;
     background-color: #29ca8e;
