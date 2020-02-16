@@ -41,6 +41,31 @@ a {
     height: 100%;
 }
 
+#prev, #next {
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    font-size: 50px;    
+    cursor: pointer;
+}
+
+#prev i:hover, #next  i:hover{
+   color: #29ca8e;
+}
+
+#prev{
+    left: 10px;
+}
+
+#next{
+    right: 10px;
+}
+
+
+
 .nav .menu a li:hover {
     color: white;
     background-color: #29ca8e;
@@ -71,14 +96,27 @@ a {
     position: relative;
     margin-top: 20px;
 }
+.fade{
+    animation: fadeIn ease 1s;
 
+} 
+
+
+@keyframes fadein {
+    0% {
+        opacity:0;
+    }
+
+    100%{
+        opacity:1;
+    }
+}
 /* #slider-slike {
     position:relative;
     height: auto;
     width: 100%;
     margin:0 auto;
 }
-
 #slider-slike img {
     position:absolute;
     left:0;
@@ -87,7 +125,6 @@ a {
     -o-transition: opacity 3s ease-in-out;
     transition: opacity 3s ease-in-out;
 }
-
 #slider-slike img.top {
     animation-name: cf3FadeInOut;
     animation-timing-function: ease-in-out;
@@ -96,7 +133,6 @@ a {
     animation-direction: alternate;
     animation-delay: 6s;
 }
-
 #slider-slike img.middle {
     animation-name: cf3FadeInOut;
     animation-timing-function: ease-in-out;
@@ -105,7 +141,6 @@ a {
     animation-direction: alternate;
     animation-delay: 4s;
 }
-
 #slider-slike img.bottom {
     animation-name: cf3FadeInOut;
     animation-timing-function: ease-in-out;
@@ -114,7 +149,6 @@ a {
     animation-direction: alternate;
     animation-delay: 2s;
 }
-
 @keyframes cf3FadeInOut {
     0% {
       opacity:1;
@@ -145,34 +179,6 @@ img {
     position: absolute;
     padding: 20px;
     bottom: 10px;
-}
-
-#left-arrow {
-    position: absolute;
-    font-size: 50px;
-    top:300px;
-    left: 5px;  
-    cursor: pointer;
-    display: inline-block;
-}
-
- #left-arrow i:hover {
-    color:#29ca8e;
-}
-
-#right-arrow  i:hover{
-    color:#29ca8e;
-
-}
-
-
-#right-arrow {
-    position: absolute;
-    font-size: 50px;
-    top:300px;
-    right: 5px;
-    cursor: pointer;
-    display: inline-block;
 }
 
 /* DUGME ISPOD SLIKE */
@@ -563,6 +569,10 @@ textarea {
     color: grey;
 }
 
+
+#squareLeft i:hover, #squareRight i:hover{
+    color: #29ca8e;
+}
 /* STUDENT CONTAINER */
 
 .student-container {
@@ -1065,6 +1075,10 @@ footer {
 
 }
 
+#courses-container-desktop {
+    display: none;
+}
+
 @media screen and (min-width:992px) {
 
     header {
@@ -1140,10 +1154,33 @@ footer {
         line-height: 35px;
         text-align: center;
     }
-    
+    #courses-container-mobile{
+        display: none;
+    }
+    #courses-container-desktop{
+        display: flex;
+    }
+
+    .courses-header{
+        width: 100%;
+        display: inline-block;
+
+    }
 
     .courses-container {
         padding: 0 calc((100% - 900px) / 2);
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+
+    .courses-container .one{
+        width: calc(100% / 3);
+    }
+
+    .avatar-input {
+        margin-left: 10px !important;
+        padding: 0 20px;
     }
 
     .contact-container {
