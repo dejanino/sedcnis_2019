@@ -9,10 +9,6 @@
     font-family: Arial, Helvetica, sans-serif;
 
 }
-i:hover {
-    cursor: pointer !important;
-}
-
 header {
     border-top: 5px solid #29ca8e;
     width: 100%;
@@ -44,6 +40,27 @@ a {
     color: grey;
     height: 100%;
 }
+
+#prev, #next {
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    font-size: 20px;
+    color: white ;
+}
+
+#prev{
+    left: 10px;
+}
+
+#next{
+    right: 10px;
+}
+
+
 
 .nav .menu a li:hover {
     color: white;
@@ -188,30 +205,6 @@ img {
 
 .slider-paragraf {
     padding-top: 10px;
-}
-.fa.fa-arrow-left {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 0;
-    z-index: 1000;
-    height: 100%;
-    width: 25px;
-    font-size: 25px;
-    text-align: center;
-    color: white;
-}
-.fa.fa-arrow-right {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 0;
-    z-index: 1000;
-    height: 100%;
-    width: 25px;
-    font-size: 25px;
-    text-align: center;
-    color:white;
 }
 
 /* OFFERS CONTAINER */
@@ -1065,6 +1058,10 @@ footer {
 
 }
 
+#courses-container-desktop {
+    display: none;
+}
+
 @media screen and (min-width:992px) {
 
     header {
@@ -1140,10 +1137,33 @@ footer {
         line-height: 35px;
         text-align: center;
     }
-    
+    #courses-container-mobile{
+        display: none;
+    }
+    #courses-container-desktop{
+        display: flex;
+    }
+
+    .courses-header{
+        width: 100%;
+        display: inline-block;
+
+    }
 
     .courses-container {
         padding: 0 calc((100% - 900px) / 2);
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+
+    .courses-container .one{
+        width: calc(100% / 3);
+    }
+
+    .avatar-input {
+        margin-left: 10px !important;
+        padding: 0 20px;
     }
 
     .contact-container {
@@ -1206,6 +1226,7 @@ footer {
         width: 33.33%;
         margin-right: 10px;
         background-color: white;
+        /*position:*/
     }
 
     .student-window-h {
