@@ -173,34 +173,103 @@
         </div>
         <!-- End Teachers -->
         <!-- Courses -->
-        <div class="courses-container" id="courses">
-            <h3>Popular Courses</h3>
-            <p class="main-paragprah">Upgrade your skills with newest courses</p>
-            <div class="courses-container-items">  <!--Bice ih vise od 1-->
-                <div class="one-course">
-                    <div class="course-pictures"> 
-                        <img class="course-1" src="images/courses-image1.jpg" alt="">
-                        <div class="calendar-container">
-                            <a class="fa fa-calendar"></a>
-                            <p class="numbers">8 / 10 / 2019</p>
-                            <a class="fa fa-clock-o"></a>
-                            <p class="numbers">6 hours</p>
-                        </div>
+        <div class="courses-container" id="courses-container-mobile">
+            <div class="courses-header">
+                <h2>Popular Courses</h2>
+                <p>Upgrade your skills with newest courses</p>
+            </div>
+            <div class="courses-image">
+                <img src="images/courses-image5.jpg" class="for-768" alt="image" />
+                <div class="courses-input">
+                    <i class="far fa-calendar-alt"></i>
+                    <h2>5/10/2018</h2>
+                    <i class="far fa-clock"></i>
+                    <h2>10 Hours</h2>
+                </div>
+            </div>
+            <div class="courses-text">
+                <h2>Bussines & Management</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+            <div class="courses-avatar">
+                <img src="images/author-image2.jpg" alt="image">
+                <p>Jessica</p>
+                <input class="avatar-input" type="submit" value="Free" />
+            </div>
+            <div class="courses-slider">
+                <a class="far fa-caret-square-left" id="dugme-levo-768"></a>
+                <a class="far fa-caret-square-right" id="dugme-desno-768"></a>
+            </div>
+        </div>
+        <div id="courses-container-desktop" class="courses-container">            
+            <div class="courses-header">
+                <h2>Popular Courses</h2>
+                <p>Upgrade your skills with newest courses</p>
+            </div>
+            <div class="one">
+                <div class="courses-image">
+                    <img src="images/courses-image5.jpg" alt="image" id="first-picture-desktop" />
+                    <div class="courses-input">
+                        <i class="far fa-calendar-alt"></i>
+                        <h2>5/10/2018</h2>
+                        <i class="far fa-clock"></i>
+                        <h2>10 Hours</h2>
                     </div>
-                    <h4>Business & Managment</h4>
+                </div>
+                <div class="courses-text">
+                    <h2>Bussines & Management</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                    <div class="select-teacher">
-                        <img class="teacher-1" src="images/author-image1.jpg" alt="">
-                        <p>Mark Wilson</p>
-                        <a href="#" class="teacher-price">Free</a> <!--Nisam siguran da je div, mozda je nesto js-->
+                </div>
+                <div class="courses-avatar">
+                    <img src="images/author-image2.jpg" alt="image">
+                    <p>Jessica</p>
+                    <input class="avatar-input" type="submit" value="Free" />
+                </div>
+            </div>
+            <div class="one">
+                <div class="courses-image">
+                    <img src="images/courses-image1.jpg" alt="image" id="second-picture-desktop"/>
+                    <div class="courses-input">
+                        <i class="far fa-calendar-alt"></i>
+                        <h2>5/10/2018</h2>
+                        <i class="far fa-clock"></i>
+                        <h2>10 Hours</h2>
                     </div>
+                </div>
+                <div class="courses-text">
+                    <h2>Bussines & Management</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                </div>
+                <div class="courses-avatar">
+                    <img src="images/author-image2.jpg" alt="image">
+                    <p>Jessica</p>
+                    <input class="avatar-input" type="submit" value="Free" />
                 </div>
                 
             </div>
-        </div>
+            <div class="one">
+                <div class="courses-image">
+                    <img src="images/courses-image3.jpg" alt="image" id="third-picture-desktop"/>
+                    <div class="courses-input">
+                        <i class="far fa-calendar-alt"></i>
+                        <h2>5/10/2018</h2>
+                        <i class="far fa-clock"></i>
+                        <h2>10 Hours</h2>
+                    </div>
+                </div>
+                <div class="courses-text">
+                    <h2>Bussines & Management</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                </div>
+                <div class="courses-avatar">
+                    <img src="images/author-image2.jpg" alt="image">
+                    <p>Jessica</p>
+                    <input class="avatar-input" type="submit" value="Free" />
+                </div>
+            </div>
             <div class="courses-slider">
-                <a href="#" class="strelica-desno far fa-caret-square-left"></a>
-                <a href="#" class="strelica-levo far fa-caret-square-right"></a>
+                <a  class="strelica-levo far fa-caret-square-left" id="levo-courses"></a>
+                <a  class="strelica-desno far fa-caret-square-right" id="desno-courses"></a>
             </div>
         </div>
         <!-- End Courses -->

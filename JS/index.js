@@ -48,21 +48,6 @@ dugmeDesno.addEventListener('click', function(){
 dugmeLevo.addEventListener('click',function(){
     changeSlide(-1);
 });
-
-/* image: "",
-        title: "",
-        description: "",
-        url: ""
-        
-function changeSlideLevo(){
-    firstImage.setAttribute('src', slider[imageIndexLevo])
-    imageIndexLevo--;
-    if (imageIndexLevo < 0){imageIndexLevo = 2}
-}        
-        
-        
-        
-        */
        let navigationBar = document.querySelector('.nav'); 
        //funkcija za gasenje i paljenje
        let dropDownMenu = function() {
@@ -79,3 +64,93 @@ function changeSlideLevo(){
        }
        let anchorClick = document.querySelector('.drop-down-menu');
        anchorClick.addEventListener('click', dropDownMenu); 
+// ODAVDE IDE ZA COURSES
+let divZaSvaJedan = document.getElementById("courses-container-mobile");
+let divZaSvaTri = document.getElementById("courses-container-desktop");
+
+let mediaQuery768 = function(){
+    let isMobile = window.matchMedia("(max-width: 768px)");
+
+    if(isMobile.matches){
+        divZaSvaTri.style.display = "none";
+        divZaSvaJedan.style.display = "flex";
+    }
+    else{
+        divZaSvaJedan.style.display = "none";
+        divZaSvaTri.style.display = "flex";
+    }
+}
+window.addEventListener("resize", mediaQuery768);
+mediaQuery768(0);
+
+dugmeCoursesDesno = document.getElementById("dugme-desno-768");
+dugmeCoursesLevo = document.getElementById("dugme-levo-768");
+
+let coursesSlider = [{imageCourses:"images/courses-image1.jpg"},             
+                     {imageCourses:"images/courses-image2.jpg"},
+                     {imageCourses:"images/courses-image3.jpg"},
+                     {imageCourses:"images/courses-image4.jpg"},
+                     {imageCourses:"images/courses-image5.jpg"}
+                    ]
+let coursesIndex = 0;
+let coursesBigPicture = document.querySelector('.for-768');
+console.log(coursesSlider[0])
+//OVDE CU DA MORAM DA POZOVEM SVE ODJEDNOM
+function changeSlideCourses(other){
+    coursesIndex = coursesIndex + other;
+
+    if (coursesIndex > coursesSlider.length - 1){
+        coursesIndex = 0;
+    }
+    else if (coursesIndex < 0){
+        coursesIndex = coursesSlider.length -1;
+    }
+    coursesBigPicture.src = coursesSlider[coursesIndex].imageCourses;
+    console.log(coursesIndex)
+}
+changeSlideCourses(0)
+
+dugmeCoursesDesno.addEventListener('click', function(){
+    changeSlideCourses(1); 
+});
+dugmeCoursesLevo.addEventListener('click', function(){
+    changeSlideCourses(-1);
+});
+
+
+dugmeCoursesDesnoDesktop = document.getElementById("desno-courses");
+dugmeCoursesLevoDesktop = document.getElementById("levo-courses");
+
+let prvaSlickaDesktop = document.getElementById("first-picture-desktop");
+let drugaSlickaDesktop = document.getElementById("second-picture-desktop");
+let trecaSlickaDesktop = document.getElementById("third-picture-desktop");
+
+let i = 0;
+dugmeCoursesDesnoDesktop.addEventListener("click", function(){
+    if(i<coursesSlider.length - 1){
+        let izbacen = coursesSlider.shift()
+        coursesSlider.push(izbacen)
+
+    }
+    else {
+        i = 0;
+    }
+    prvaSlickaDesktop.src = coursesSlider[0].imageCourses;
+    drugaSlickaDesktop.src = coursesSlider[1].imageCourses;
+    trecaSlickaDesktop.src = coursesSlider[2].imageCourses;
+})
+
+let j = 0;
+dugmeCoursesLevoDesktop.addEventListener("click", function(){
+    if(j<coursesSlider.length - 1){
+        let izbacenSuprotno = coursesSlider.pop()
+        coursesSlider.unshift(izbacenSuprotno)
+
+    }
+    else {
+        j = 0;
+    }
+    prvaSlickaDesktop.src = coursesSlider[0].imageCourses;
+    drugaSlickaDesktop.src = coursesSlider[1].imageCourses;
+    trecaSlickaDesktop.src = coursesSlider[2].imageCourses;
+})

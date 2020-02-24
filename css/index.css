@@ -580,105 +580,119 @@ textarea {
 }
 
 /* COURSES CONTAINER */
-
 .courses-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* HEADER */
+
+.courses-header {
     text-align: center;
-    margin-top: 30px;
-    height: auto;
+    margin-bottom: 50px;
 }
-.courses-container h3 {
-    margin-bottom: 0px;
-    font-size: 1.5em;
-}
-.courses-container .main-paragprah {
-    margin-bottom: 30px;
-}
-.courses-container-items {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.courses-container-items .one-course {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 90vw;
+
+/* SLIKA */
+
+.courses-image {
+    position: relative;
     background-color: #f9f9f9;
-    margin-bottom: 30px;
+    width: 90%;
 }
-.one-course h4{
-    margin-bottom: 0px;
-    padding-left: 20px;
+
+.courses-image img{
+    width: 100%;
 }
-.one-course p{
-    text-align: left;
-    padding-left: 20px;
-}
-.one-course .course-pictures {
-    display: flex;
-    position: relative;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: flex-start;
-}
-/*Course picture + text above it*/
-.course-pictures .course-1, .course-2, .course-3, .course-4 {
-    width: 90vw;
-}
-.course-pictures .calendar-container {
+
+/* DATUM I VREME */
+
+.courses-input {
     position: absolute;
-    bottom: 0px;
-    width: 100%;
-    height: 40px;
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding-left: 10px;
-    padding-right: 10px;
+    flex-direction: row;
     color: white;
-    background-color: rgba(0, 0, 0, 0.5);
-    font-size: 12px;
+    bottom: 10%;
+    padding: 10px;
 }
-.calendar-container a, .numbers {
-    padding: 0px;
-    line-height: 40px;
-    color: white;
+
+.courses-input h2 {
+    padding: 0 15px 0 5px;
+
 }
-.calendar-container .numbers {
-    padding: 0px 5px;
-    font-size: 14px;
+
+.courses-input i {
+    font-size: 23px;
 }
-/*Part about teachers*/
-.select-teacher {
-    position: relative;
-    margin-top: 10px;
-    border-top: 1px solid #575757;
-    display: flex;
-    width: 100%;
-    height: 100px;
+
+/* TEXT ISPOD SLIKE */
+
+.courses-text {
     padding: 20px;
+    background-color: #f9f9f9;
+    width: 90%;
 }
-.select-teacher .teacher-1{
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
+
+.courses-text p {
+    line-height: 1.6em;
 }
-.select-teacher p{
-    line-height: 60px;
-    color: black;
+
+.courses-text h2 {
+    margin-bottom: 10px;
+}
+
+/* AVATAR CONTAINER */
+
+.courses-avatar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #f9f9f9;
+    border-top: 1px solid lightgray;
+    padding: 20px;
+    width: 90%;
     font-weight: bold;
 }
-.select-teacher .teacher-price {
-    position: absolute;
-    right: 20px;
-    bottom: 30px;
-    line-height: 40px;
-    height: 40px;
-    width: 60px;
-    background-color: #3f51b5;
-    border-radius: 2px;
-    color: white;
+
+/* SLICICA */
+
+.courses-avatar img {
+    width: 55px;
+    height: 55px;
+    border-radius: 30px;
 }
+
+/* FREE BUTTON */
+
+.avatar-input {
+    margin: 0;
+    height: 35px;
+    width: auto;
+    background-color: #3f51b5;
+    color: white;
+    font-weight: bold;
+    margin-left: auto;
+    margin-right: 10px;
+    padding: 0 50px;
+
+}
+
+.avatar-input:hover {
+    cursor: pointer;
+}
+
+/* COURSES NAVIGACIJA-SLIDER */
+
+.courses-slider {
+    width: 100%;
+    text-align: center;
+    padding: 50px 100px 50px 100px;
+    font-size: 30px;
+    color: grey;
+}
+
 /*ALL ABOUT STUDENT REVIEWS*/
 .reviews-container {
     background-color: #f9f9f9;
@@ -842,15 +856,19 @@ textarea {
 
 .courses-slider {
     display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     text-align: center;
-    padding: 50px 100px 50px 100px;
     font-size: 30px;
     color: grey;
 }
 .courses-slider > .strelica-levo, .strelica-desno{
+    flex: 1;
     width: 50px;
 }
+
+
 
 /* STUDENT CONTAINER */
 
@@ -1274,6 +1292,7 @@ li {
     line-height: 45px;
 }
 
+
 /* HEADER */
 
 .courses-header {
@@ -1431,10 +1450,81 @@ footer {
     }
     
 
-    .courses-container {
-        padding: 0 calc((100% - 900px) / 2);
+    #courses-container-mobile{
+        display: none;
+    }
+    #courses-container-desktop{
+        display: flex;
     }
 
+    .courses-header{
+        width: 100%;
+        display: inline-block;
+
+    }
+
+    .courses-container {
+        padding: 0 calc((100% - 900px) / 2);
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+
+    .courses-container .one{
+        width: calc(100% / 3);
+    }
+
+    .avatar-input {
+        margin-left: 10px !important;
+        padding: 0 20px;
+    }
+
+    .contact-container {
+        flex-direction: row;
+        align-items: center;
+        padding: 0 calc((100% - 900px) / 2);
+        padding-bottom: 20px;
+    }
+
+    .contact-text {
+        padding-top: 15px;
+    }
+
+    .contact-form {
+        width: 50%;
+    }   
+    
+    .contact-form-input {
+        width: 100%;
+    }
+
+    .contact-form-submit {
+        width: 40%;
+    }
+
+    .contact-image {
+        margin-left: 35px;
+        padding-bottom: 0px;
+        width: 50%;
+    }
+
+    footer {
+        flex-wrap: nowrap;
+    }
+
+    .headquarter {
+        width: 33.33%;
+    }
+
+    .contact-quicklinks {
+        width: 33.33%;
+    }
+
+    .newsletter {
+        width: 33.33%;
+        margin-top: 0px;
+    }
+    
     .contact-container {
         flex-direction: row;
         align-items: center;
