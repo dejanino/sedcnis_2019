@@ -9,6 +9,10 @@
     font-family: Arial, Helvetica, sans-serif;
 
 }
+i:hover {
+    cursor: pointer !important;
+}
+
 header {
     border-top: 5px solid #29ca8e;
     width: 100%;
@@ -184,6 +188,30 @@ img {
 
 .slider-paragraf {
     padding-top: 10px;
+}
+.fa.fa-arrow-left {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    z-index: 1000;
+    height: 100%;
+    width: 25px;
+    font-size: 25px;
+    text-align: center;
+    color: white;
+}
+.fa.fa-arrow-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    z-index: 1000;
+    height: 100%;
+    width: 25px;
+    font-size: 25px;
+    text-align: center;
+    color:white;
 }
 
 /* OFFERS CONTAINER */
@@ -1178,7 +1206,6 @@ footer {
         width: 33.33%;
         margin-right: 10px;
         background-color: white;
-        position:
     }
 
     .student-window-h {
