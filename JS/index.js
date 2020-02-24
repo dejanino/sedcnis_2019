@@ -69,7 +69,7 @@ let divZaSvaJedan = document.getElementById("courses-container-mobile");
 let divZaSvaTri = document.getElementById("courses-container-desktop");
 
 let mediaQuery768 = function(){
-    let isMobile = window.matchMedia("(max-width: 768px)");
+    let isMobile = window.matchMedia("(max-width: 992px)");
 
     if(isMobile.matches){
         divZaSvaTri.style.display = "none";
@@ -154,3 +154,23 @@ dugmeCoursesLevoDesktop.addEventListener("click", function(){
     drugaSlickaDesktop.src = coursesSlider[1].imageCourses;
     trecaSlickaDesktop.src = coursesSlider[2].imageCourses;
 })
+
+
+let forThumbnail = [{imageStudents:"images/tst-image1.jpg"},             
+                     {imageStudents:"images/tst-image2.jpg"},
+                     {imageStudents:"images/tst-image3.jpg"},
+                     {imageStudents:"images/tst-image4.jpg"}
+                    ]
+
+
+forThumbnail.forEach(function(){
+    let parent = document.getElementById('wrapper-for-anchors');
+    let anchor1 = document.createElement('a');
+    anchor1.setAttribute("class", "dot");
+    anchor1.setAttribute("href", "javascript:;");
+    anchor1.style.fontSize = "14px";
+    anchor1.innerHTML = "<i class='fa'>&#xf192;</i>";
+    parent.appendChild(anchor1);
+})
+
+

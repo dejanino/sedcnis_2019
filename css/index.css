@@ -994,6 +994,18 @@ textarea {
     margin-top: 20px;
 }
 
+.student-dots .smanjenje-dugmeta{
+    font-size: 10px;
+}
+
+/*.student-dots .smanjenje-dugmeta:hover{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    left: 0px;
+}*/
+
 .contact-image img {
     width: 100%;
 }
