@@ -882,12 +882,25 @@ textarea {
 .student-window-h {
     display: none;
 }
-.student-window .style {
+.student-dots {
+    position: relative;
+}
+.bez-style{
+    display: none;
+}
+.dot {
+    text-align: center;
+}
+.style {
     position: absolute;
-    background-image: url(/images/building.jpg);
-    background-repeat: no-repeat;
-    width: 100px;
+    display: flex;
+    z-index: 10;
+    width: 100px !important;
     height: 100px;
+    background-color: black;
+    left: 80px;
+    bottom: 100px;
+    border: 2px solid green;
     }
 
 .student-header {

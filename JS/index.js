@@ -156,28 +156,52 @@ dugmeCoursesLevoDesktop.addEventListener("click", function(){
 })
 
 
-let forThumbnail = [{imageStudents:"images/tst-image1.jpg"},             
-                     {imageStudents:"images/tst-image2.jpg"},
-                     {imageStudents:"images/tst-image3.jpg"},
-                     {imageStudents:"images/tst-image4.jpg"}
+let forThumbnail = [{imageStudents:"images/tst-image1.jpg",
+                     propertyForHeading2: "Jackson"},   
+
+                     {imageStudents:"images/tst-image2.jpg",
+                     propertyForHeading2: "Svetlana"},
+
+                     {imageStudents:"images/tst-image3.jpg",
+                     propertyForHeading2: "Mirjana"},
+
+                     {imageStudents:"images/tst-image4.jpg",
+                     propertyForHeading2: "Camila"}
                     ]
 
 forThumbnail.forEach(function(elementContent, index){
     console.log(elementContent, index)
     let studentPicture = document.getElementById('slika-student')
+    let nameOfAStudent = document.getElementById('h2')
     let parent = document.getElementById('wrapper-for-anchors');
-    let anchor1 = document.createElement('a');
-    anchor1.setAttribute("class", "dot");
-    anchor1.setAttribute("href", "javascript:;");
-    anchor1.style.fontSize = "14px";
-    anchor1.innerHTML = "<i class='fa'>&#xf192;</i>";
-    parent.appendChild(anchor1)
-    forThumbnail[index].index = index;
+    let tacka = document.createElement('a');
+    tacka.setAttribute("class", "dot");
+    tacka.setAttribute("href", "javascript:;");
+    tacka.style.fontSize = "14px";
+    tacka.innerHTML = "<i class='fa'>&#xf192;</i>";
+    parent.appendChild(tacka);
+ 
+    /*forThumbnail[index].index = index;
     forThumbnail[index].idKojiSamJaOnakoNpr = "dot-" + index;
-    forThumbnail[index].url = "/review-" + index;
+    forThumbnail[index].url = "/review-" + index;*/
 
-    anchor1.addEventListener('click', function(){
+    tacka.addEventListener('click', function(){
         studentPicture.src = forThumbnail[index].imageStudents;
+        nameOfAStudent.textContent = forThumbnail[index].propertyForHeading2;
+    })
+
+    tacka.addEventListener('mouseover', function(e){
+        console.log(e.clientX);
+        console.log(e.clientY);
+        let divZaPrikaz = document.querySelector('.bez-style');
+        let slikaZaHover = document.getElementById('slika-hover');
+        slikaZaHover.src = forThumbnail[index].imageStudents;
+        divZaPrikaz.classList.add('style');
+    })
+
+    tacka.addEventListener('mouseout', function(){
+        let divZaPrikaz = document.querySelector('.bez-style');
+        divZaPrikaz.classList.remove('style');
     })
   
 })
