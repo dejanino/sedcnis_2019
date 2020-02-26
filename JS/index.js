@@ -162,7 +162,7 @@ let forThumbnail = [{imageStudents:"images/tst-image1.jpg"},
                      {imageStudents:"images/tst-image4.jpg"}
                     ]
 
-
+let arrayForAnchors = [];
 forThumbnail.forEach(function(){
     let parent = document.getElementById('wrapper-for-anchors');
     let anchor1 = document.createElement('a');
@@ -171,6 +171,19 @@ forThumbnail.forEach(function(){
     anchor1.style.fontSize = "14px";
     anchor1.innerHTML = "<i class='fa'>&#xf192;</i>";
     parent.appendChild(anchor1);
+    arrayForAnchors.push(anchor1);
+    return arrayForAnchors;
 })
+console.log(arrayForAnchors)
+for (let counter =0; counter<forThumbnail.length; counter++){
+    
+    arrayForAnchors[counter].addEventListener('click', function(){
+        let studentPicture = document.getElementById('slika-student')
+        studentPicture.src = forThumbnail[counter].imageStudents;
+    })
+    //OVDE SAMO DA NAPRAVIM ZA HOVER EVENTE
+}
+    
+
 
 
