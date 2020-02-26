@@ -162,27 +162,27 @@ let forThumbnail = [{imageStudents:"images/tst-image1.jpg"},
                      {imageStudents:"images/tst-image4.jpg"}
                     ]
 
-let arrayForAnchors = [];
-forThumbnail.forEach(function(){
+forThumbnail.forEach(function(elementContent, index){
+    console.log(elementContent, index)
+    let studentPicture = document.getElementById('slika-student')
     let parent = document.getElementById('wrapper-for-anchors');
     let anchor1 = document.createElement('a');
     anchor1.setAttribute("class", "dot");
     anchor1.setAttribute("href", "javascript:;");
     anchor1.style.fontSize = "14px";
     anchor1.innerHTML = "<i class='fa'>&#xf192;</i>";
-    parent.appendChild(anchor1);
-    arrayForAnchors.push(anchor1);
-    return arrayForAnchors;
-})
-console.log(arrayForAnchors)
-for (let counter =0; counter<forThumbnail.length; counter++){
-    
-    arrayForAnchors[counter].addEventListener('click', function(){
-        let studentPicture = document.getElementById('slika-student')
-        studentPicture.src = forThumbnail[counter].imageStudents;
+    parent.appendChild(anchor1)
+    forThumbnail[index].index = index;
+    forThumbnail[index].idKojiSamJaOnakoNpr = "dot-" + index;
+    forThumbnail[index].url = "/review-" + index;
+
+    anchor1.addEventListener('click', function(){
+        studentPicture.src = forThumbnail[index].imageStudents;
     })
-    //OVDE SAMO DA NAPRAVIM ZA HOVER EVENTE
-}
+  
+})
+
+
     
 
 

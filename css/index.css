@@ -882,6 +882,13 @@ textarea {
 .student-window-h {
     display: none;
 }
+.student-window .style {
+    position: absolute;
+    background-image: url(/images/building.jpg);
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 100px;
+    }
 
 .student-header {
     text-align: center;
