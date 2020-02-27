@@ -5,12 +5,13 @@
     box-sizing: border-box;
 }
 
-
-.nav.active, .nav:hover {
+.nav.active,
+.nav:hover {
     background-color: #29ca8e;
 }
 
-.nav.active a, .nav:hover a {
+.nav.active a,
+.nav:hover a {
     color: white;
 }
 
@@ -18,7 +19,9 @@ body {
     margin: 0;
 }
 
-a, a:visited, a:active {
+a,
+a:visited,
+a:active {
     color: #666;
 }
 
@@ -61,7 +64,8 @@ header .logo {
     text-decoration: none;
 }
 
-.nav a.active, .nav a:hover {
+.nav a.active,
+.nav a:hover {
     background-color: #29ca8e;
     color: white;
 }
@@ -91,14 +95,16 @@ header .logo {
     border-style: solid;*/
 }
 
-header, .slider, .main-container {
+header,
+.slider,
+.main-container {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
 }
 
 .TextInPicture {
-    padding: 20px;
+    padding: 40px;
     width: 80%;
     position: absolute;
     top: 30%;
@@ -109,6 +115,11 @@ header, .slider, .main-container {
 .slider img {
     width: 100%;
 }
+
+.slider-description .p {
+    text-size: 10px;
+}
+
 #left-arrow,
 #right-arrow {
     top: 50%;
@@ -133,7 +144,6 @@ header, .slider, .main-container {
     line-height: 25px;
     width: 100%;
 }
-
 
 .teachers-container {
     /*background-color: gray;*/
@@ -192,6 +202,7 @@ article p {
     background-color: #229955;
 }
 
+
 /*.top-offers:hover article h3 {
     letter-spacing: 20px;
 }
@@ -214,11 +225,10 @@ article p {
 .form-description {
     width: 100%;
     /*background: whitesmoke; */
-    padding-left:20px;
+    padding-left: 20px;
     margin-top: 40px;
     margin-bottom: 20px;
 }
-
 
 form {
     display: flex;
@@ -499,7 +509,9 @@ form {
     margin: auto;
 }
 
-.contact-textarea, .contact-button, .contact-input {
+.contact-textarea,
+.contact-button,
+.contact-input {
     height: 40px;
     border-radius: 5px;
     border: none;
@@ -607,7 +619,6 @@ footer {
     .signup-container {
         width: 100%;
     }
-
     .form-description article {
         margin-bottom: 50px;
         width: 100%;
@@ -622,8 +633,7 @@ footer {
     .signup-form input {
         font-size: 0.9em;
     }
-    .courses-input i {
-    }
+    .courses-input i {}
 }
 
 @media screen and (min-width: 768px) {
@@ -666,7 +676,6 @@ footer {
     }
     .form-description {
         width: 100%;
-       
     }
     .signup-container {
         padding-left: 0 5px;
@@ -692,6 +701,7 @@ footer {
         width: 100%;
         background: whitesmoke;
         display: flex;
+        flex-wrap: wrap;
     }
     .reviews-container .reviews-item {
         width: 100%;
@@ -754,10 +764,10 @@ footer {
         background: whitesmoke;
         display: flex;
     }
-    .reviews-container .reviews-item {
+    /* .reviews-container .reviews-item {
         width: calc(100%/ 3);
         background: whitesmoke;
-    }
+    } */
     .reviews-container .reviews-item article {
         background: white;
     }
@@ -771,7 +781,8 @@ footer {
     .container-title {
         width: 100%;
     }
-    .contact-form, .contact-image {
+    .contact-form,
+    .contact-image {
         width: 50%;
         padding: 20px;
     }

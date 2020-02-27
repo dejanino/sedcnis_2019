@@ -33,7 +33,7 @@
             <!--  -->
         </a>
         <div id="slider-image">
-            <img id="slider-img" class="top" src="images/slider-image1.jpg" alt="image" />
+            <img id="slider-img" class="top" alt="image" />
         </div>
         <!-- Ovde postavljamo slike za slajder do realizacije javascript
             
@@ -44,9 +44,9 @@
             </div> -->
 
         <div class="TextInPicture">
-            <h1 id="slider-heading">Efficient Learning Methods</h1>
-            <p>Nam eget sapient...</p>
-            <a href="#"><button class="lets-chat-button">Let´s chat!</button></a>
+            <h1 id="slider-heading"></h1>
+            <p id="slider-description"></p>
+            <a href="#contact-container" id="slider-button"></a>
         </div>
         <a href="#" id="right-arrow">
             <i class="fas fa-arrow-right"></i>
@@ -59,8 +59,7 @@
             <article>
                 <div class="image">01</div>
                 <h3>Trending Courses</h3>
-                <p>Known is a free educational HTMP Bootstrap template. You can modify it and you are free to use it for
-                    your website.
+                <p>Known is a free educational HTMP Bootstrap template. You can modify it and you are free to use it for your website.
                 </p>
             </article>
             <article>
@@ -90,8 +89,7 @@
                             <i class="fa fa-users"></i>
                         </div>
                         <h3>Professional Trainers</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus consequatur recusandae
-                            eum.
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus consequatur recusandae eum.
                         </p>
                     </article>
                     <article>
@@ -99,8 +97,7 @@
                             <i class="fa fa-certificate"></i>
                         </div>
                         <h3>International Certifications</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus consequatur recusandae
-                            eum.
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus consequatur recusandae eum.
                         </p>
                     </article>
                     <article>
@@ -108,8 +105,7 @@
                             <i class="fa fa-bar-chart" aria-hidden="true"></i>
                         </div>
                         <h3>Free for three months</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus consequatur recusandae
-                            eum.
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus consequatur recusandae eum.
                         </p>
                     </article>
                 </div>
@@ -142,9 +138,9 @@
                 </div>
 
                 <div class="teacher-item-icons">
-                    <a href=""><i class="fa fa-facebook-square"></i></a>
-                    <a href=""><i class="fa fa-twitter"></i></a>
-                    <a href=""><i class="fa fa-instagram"></i></a>
+                    <a href=""><i class="fab fa-facebook-square"></i></a>
+                    <a href=""><i class="fab fa-twitter"></i></a>
+                    <a href=""><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
             <div class="teacher-item">
@@ -156,9 +152,9 @@
                     <h6>Education is the key!</h6>
                 </div>
                 <div class="teacher-item-icons">
-                    <a href=""><i class="fa fa-facebook-square"></i></a>
-                    <a href=""><i class="fa fa-twitter"></i></a>
-                    <a href=""><i class="fa fa-instagram"></i></a>
+                    <a href=""><i class="fab fa-facebook-square"></i></a>
+                    <a href=""><i class="fab fa-twitter"></i></a>
+                    <a href=""><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
             <div class="teacher-item">
@@ -170,9 +166,9 @@
                     <h6>I like Online Courses</h6>
                 </div>
                 <div class="teacher-item-icons">
-                    <a href=""><i class="fa fa-facebook-square"></i></a>
-                    <a href=""><i class="fa fa-twitter"></i></a>
-                    <a href=""><i class="fa fa-instagram"></i></a>
+                    <a href=""><i class="fab fa-facebook-square"></i></a>
+                    <a href=""><i class="fab fa-twitter"></i></a>
+                    <a href=""><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
             <div class="teacher-item">
@@ -185,9 +181,9 @@
                 </div>
 
                 <div class="teacher-item-icons">
-                    <a href=""><i class="fa fa-facebook-square"></i></a>
-                    <a href=""><i class="fa fa-twitter"></i></a>
-                    <a href=""><i class="fa fa-instagram"></i></a>
+                    <a href=""><i class="fab fa-facebook-square"></i></a>
+                    <a href=""><i class="fab fa-twitter"></i></a>
+                    <a href=""><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
             <!-- <img src="images\slider-image3.jpg"> 
@@ -232,8 +228,13 @@
             </div>
             <div class="courses-item">
                 <div class="courses-image">
-                    <img src="images/courses-image3.jpg">
-                    <h4>Date:20/07/2018 Time:4.5 Hours</h4>
+                    <img src="images/courses-image3.jpg" />
+                    <div class="courses-input">
+                        <i class="fa fa-calendar"></i>
+                        <h2>15/08/2018</h2>
+                        <i class="fa fa-clock-o"></i>
+                        <h2>6 Hours</h2>
+                    </div>
                 </div>
                 <div class="courses-text">
                     <h3>Marketing Communication</h3>
@@ -251,8 +252,13 @@
             </div>
             <div class="courses-item">
                 <div class="courses-image">
-                    <img src="images/courses-image4.jpg">
-                    <h4>Date:20/07/2018 Time:4.5 Hours</h4>
+                    <img src="images/courses-image4.jpg" />
+                    <div class="courses-input">
+                        <i class="fa fa-calendar"></i>
+                        <h2>10/08/2018</h2>
+                        <i class="fa fa-clock-o"></i>
+                        <h2>8 Hours</h2>
+                    </div>
                 </div>
                 <div class="courses-text">
                     <h3>Summer Kids</h3>
@@ -269,8 +275,12 @@
                 </div>
             </div>
             <div class="courses-slider">
-                <i class="fa fa-caret-square-o-left"></i>
-                <i class="fa fa-caret-square-o-right"></i>
+                <button type="button" id="left-arrow-courses">
+                    <i class="fa fa-caret-square-o-left"></i>
+                </button>
+                <button type="button" id="right-arrow-courses">
+                    <i class="fa fa-caret-square-o-right"></i>
+                </button>
             </div>
 
         </div>
@@ -288,29 +298,25 @@
                         </div>
                         <h3>Andrio</h3>
                         <h5>Web developer</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur quibusdam iusto,
-                            rem error illum earum nostrum recusandae eum officia id accusamus atque asperiores odit
-                            in nisi ducimus quo laboriosam perferendis!
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur quibusdam iusto, rem error illum earum nostrum recusandae eum officia id accusamus atque asperiores odit in nisi ducimus quo laboriosam perferendis!
                         </p>
                         <br>
-                        <a href=""><i class="fa fa-star"></i></a>
-                        <a href=""><i class="fa fa-star"></i></a>
-                        <a href=""><i class="fa fa-star"></i></a>
-                        <a href=""><i class="fa fa-star"></i></a>
-                        <a href=""><i class="fa fa-star"></i></a>
+                        <a href=""><i class="fas fa-star"></i></a>
+                        <a href=""><i class="fas fa-star"></i></a>
+                        <a href=""><i class="fas fa-star"></i></a>
+                        <a href=""><i class="fas fa-star"></i></a>
+                        <a href=""><i class="fas fa-star"></i></a>
 
                     </article>
                 </div>
-                <div class="reviews-item">
+                <!-- <div class="reviews-item">
                     <article>
                         <div class="StudentReviews1">
                             <img src="images/tst-image1.jpg" />
                         </div>
                         <h3>Jackson</h3>
                         <h5>Shopify Developer</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur quibusdam iusto,
-                            rem error illum earum nostrum recusandae eum officia id accusamus atque asperiores odit
-                            in nisi ducimus quo laboriosam perferendis!
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur quibusdam iusto, rem error illum earum nostrum recusandae eum officia id accusamus atque asperiores odit in nisi ducimus quo laboriosam perferendis!
                         </p>
                         <br>
                         <a href=""><i class="fa fa-star"></i></a>
@@ -325,9 +331,7 @@
                         </div>
                         <h3>Camila</h3>
                         <h5>Marketnig manager</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur quibusdam iusto,
-                            rem error illum earum nostrum recusandae eum officia id accusamus atque asperiores odit
-                            in nisi ducimus quo laboriosam perferendis!
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur quibusdam iusto, rem error illum earum nostrum recusandae eum officia id accusamus atque asperiores odit in nisi ducimus quo laboriosam perferendis!
                         </p>
                         <br>
                         <a href=""><i class="fa fa-star"></i></a>
@@ -335,7 +339,7 @@
                         <a href=""><i class="fa fa-star"></i></a>
                         <a href=""><i class="fa fa-star"></i></a>
                     </article>
-                </div>
+                </div> -->
             </div>
         </div>
 

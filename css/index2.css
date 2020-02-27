@@ -42,26 +42,6 @@ a {
     height: 100%;
 }
 
-#prev,
-#next {
-    position: absolute;
-    top: 50%;
-    z-index: 1;
-    display: inline-block;
-    width: 40px;
-    height: 20px;
-    font-size: 20px;
-    color: green;
-}
-
-#prev {
-    left: 10px;
-}
-
-#next {
-    right: 10px;
-}
-
 .nav .menu a li:hover {
     color: white;
     background-color: #29ca8e;
@@ -101,6 +81,7 @@ a {
     width: 100%;
     margin:0 auto;
 }
+
 #slider-slike img {
     position:absolute;
     left:0;
@@ -109,6 +90,7 @@ a {
     -o-transition: opacity 3s ease-in-out;
     transition: opacity 3s ease-in-out;
 }
+
 #slider-slike img.top {
     animation-name: cf3FadeInOut;
     animation-timing-function: ease-in-out;
@@ -117,6 +99,7 @@ a {
     animation-direction: alternate;
     animation-delay: 6s;
 }
+
 #slider-slike img.middle {
     animation-name: cf3FadeInOut;
     animation-timing-function: ease-in-out;
@@ -125,6 +108,7 @@ a {
     animation-direction: alternate;
     animation-delay: 4s;
 }
+
 #slider-slike img.bottom {
     animation-name: cf3FadeInOut;
     animation-timing-function: ease-in-out;
@@ -133,6 +117,7 @@ a {
     animation-direction: alternate;
     animation-delay: 2s;
 }
+
 @keyframes cf3FadeInOut {
     0% {
       opacity:1;
@@ -147,6 +132,31 @@ a {
     opacity:0;
     }
     } */
+
+#left-arrow,
+#right-arrow {
+    top: 50%;
+    position: absolute;
+    background: #fff;
+    width: 25px;
+    HEIGHT: 25px;
+    z-index: 1;
+}
+
+#right-arrow {
+    right: 6px;
+}
+
+#left-arrow {
+    left: 6px;
+}
+
+#left-arrow i,
+#right-arrow i {
+    text-align: center;
+    line-height: 25px;
+    width: 100%;
+}
 
 
 /* SLIDER SLIKA */
@@ -1031,10 +1041,6 @@ footer {
     }
 }
 
-#courses-container-desktop {
-    display: none;
-}
-
 @media screen and (min-width:992px) {
     header {
         padding: 0 calc((100% - 1000px) / 2);
@@ -1096,27 +1102,8 @@ footer {
         line-height: 35px;
         text-align: center;
     }
-    #courses-container-mobile {
-        display: none;
-    }
-    #courses-container-desktop {
-        display: flex;
-    }
-    .courses-header {
-        width: 100%;
-        display: inline-block;
-    }
     .courses-container {
         padding: 0 calc((100% - 900px) / 2);
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-    .courses-container .one {
-        width: calc(100% / 3);
-    }
-    .avatar-input {
-        margin-left: 10px !important;
-        padding: 0 20px;
     }
     .contact-container {
         flex-direction: row;
@@ -1166,7 +1153,7 @@ footer {
         width: 33.33%;
         margin-right: 10px;
         background-color: white;
-        position:
+        
     }
     .student-window-h {
         display: flex;

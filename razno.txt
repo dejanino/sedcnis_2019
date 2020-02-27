@@ -1,0 +1,57 @@
+Od dejana 26 02 20202
+
+
+
+var parent = document.getElementById("parent");
+
+
+
+var anchor = document.createElement("a");
+
+anchor.setAttribute("class", "dot");
+
+anchor.setAttribute("href", "javascript:;");
+
+
+
+anchor.innerHTML = '<i class="fas fa-dot-circle"></i>'
+
+
+
+anchor.addEventListener("mouseover", nekaFunkcija) // ili
+
+anchor.setAttribute("mouseover", "ime funkcije i parametri") /////////
+
+anchor.addEventListener("mouseout", nekaDrugaFunkcija)
+
+anchor.addEventListener("click", nekaTrecaFunkcija)
+
+
+
+parent.appendChild(anchor);​var parent = document.getElementById("parent");
+
+
+
+var anchor = document.createElement("a");
+
+anchor.setAttribute("class", "dot");
+
+anchor.setAttribute("href", "javascript:;");
+
+
+
+anchor.innerHTML = '<i class="fas fa-dot-circle"></i>'
+
+
+
+anchor.addEventListener("mouseover", nekaFunkcija) // ili
+
+anchor.setAttribute("mouseover", "ime funkcije i parametri") /////////
+
+anchor.addEventListener("mouseout", nekaDrugaFunkcija)
+
+anchor.addEventListener("click", nekaTrecaFunkcija)
+
+
+
+parent.appendChild(anchor);​
