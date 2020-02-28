@@ -58,6 +58,29 @@ a {
 
 /* SLIDER */
 
+#back {
+    position: absolute;
+    font-size: 35px;
+    /* left: 10px; */
+    top: 45%;
+    color: white;
+    z-index: 1;
+}
+#next {
+    position: absolute;
+    font-size: 35px;
+    /* left: 95%; */
+    top: 45%;
+    color: white;
+    z-index: 1;
+}
+#back {
+    left: 10px;
+}
+#next {
+    right: 10px;
+}
+
 .slider {
     width: 100%;
     background-color:white;
@@ -506,6 +529,13 @@ textarea {
     border-radius: 30px;
 }
 
+#courses-container-mobile {
+    display: block;
+}
+#courses-container-desktop {
+    display: none;
+}
+
 /* FREE BUTTON */
 
 .avatar-input {
@@ -598,6 +628,33 @@ textarea {
     font-size: 30px;
     color: grey;
 }
+
+.student-dots {
+    position: relative;
+}
+.dot {
+    text-align: center;
+}
+
+/* #hover-img:hover{
+    display: flex;
+    border-radius: 100%;
+} */
+#image-div{
+    width: 100px;
+    height: 100px;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+#hover-img{
+    display: none;
+}
+.style #hover-img {
+    display: inline-block;
+}
+
 
 /* CONTACT CONTAINER */
 
@@ -1037,6 +1094,10 @@ footer {
 
 }
 
+#courses-container-desktop {
+    display: none;
+}
+
 @media screen and (min-width:992px) {
 
     header {
@@ -1114,8 +1175,33 @@ footer {
     }
     
 
+    #courses-container-mobile {
+        display: none;
+    }
+    #courses-container-desktop {
+        display: flex;
+    }
+
+    .courses-header{
+        width: 100%;
+        display: inline-block;
+
+    }
+
     .courses-container {
         padding: 0 calc((100% - 900px) / 2);
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+
+    .courses-container .one{
+        width: calc(100% / 3);
+    }
+
+    .avatar-input {
+        margin-left: 10px !important;
+        padding: 0 20px;
     }
 
     .contact-container {
@@ -1175,19 +1261,20 @@ footer {
     }
 
     .student-window {
-        width: 33.33%;
+        width: 100%;
+        /* width: 33.33%; */
         margin-right: 10px;
         background-color: white;
-        position:
+        /* position: */
     }
 
-    .student-window-h {
+    /* .student-window-h {
         display: flex;
         flex-direction: column;
         width: 33.33%;
         margin-right: 10px;
         background-color: white;
-    }
+    } */
 
     .student-paragraf {
         padding: 0 0 20px 20px;
