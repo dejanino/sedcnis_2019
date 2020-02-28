@@ -193,13 +193,17 @@ forThumbnail.forEach(function(elementContent, index){
     })
     
     let slikaZaHover = document.getElementById('slika-hover');
-    tacka.addEventListener('mouseover', function(e){
+    tacka.addEventListener('mouseover', function(){
         let divZaPrikaz = document.querySelector('.bez-style');
         slikaZaHover.src = forThumbnail[index].imageStudents;
         divZaPrikaz.classList.add('style');
         let pomeranjeSlike = document.querySelector('.style');
-        pomeranjeSlike.style.left  = (e.clientX - 50) + 'px';
-        pomeranjeSlike.style.top = (e.clientY - 110) + 'px' ;
+        let pozicijaTacke = tacka.getBoundingClientRect();
+        let kordinateX = pozicijaTacke.left -15;
+        let kordinateY = pozicijaTacke.top - 100;
+
+        pomeranjeSlike.style.left  = kordinateX + 'px';
+        pomeranjeSlike.style.top = kordinateY + 'px' ;
     })
 
     tacka.addEventListener('mouseout', function(){
