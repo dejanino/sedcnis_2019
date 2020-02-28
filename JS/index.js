@@ -180,6 +180,7 @@ forThumbnail.forEach(function(elementContent, index){
     tacka.style.fontSize = "14px";
     tacka.innerHTML = "<i class='fa'>&#xf192;</i>";
     parent.appendChild(tacka);
+    let hoverTacka = document.querySelector('fa')
  
     /*forThumbnail[index].index = index;
     forThumbnail[index].idKojiSamJaOnakoNpr = "dot-" + index;
@@ -189,14 +190,16 @@ forThumbnail.forEach(function(elementContent, index){
         studentPicture.src = forThumbnail[index].imageStudents;
         nameOfAStudent.textContent = forThumbnail[index].propertyForHeading2;
     })
-
+    let slikaZaHover = document.getElementById('slika-hover');
     tacka.addEventListener('mouseover', function(e){
         console.log(e.clientX);
         console.log(e.clientY);
         let divZaPrikaz = document.querySelector('.bez-style');
-        let slikaZaHover = document.getElementById('slika-hover');
         slikaZaHover.src = forThumbnail[index].imageStudents;
         divZaPrikaz.classList.add('style');
+        let pomeranjeSlike = document.querySelector('.style');
+        pomeranjeSlike.style.left  = e.clientX + 'px';
+        pomeranjeSlike.style.top = e.clientY + 'px';
     })
 
     tacka.addEventListener('mouseout', function(){
