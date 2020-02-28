@@ -38,7 +38,6 @@ function changeSlide(aindex){
     paragraph.innerHTML = slider[imageIndex].description;
     anchor.href = slider[imageIndex].url;
 
-    console.log(imageIndex)
 }
 changeSlide(0)
 
@@ -94,7 +93,6 @@ let coursesSlider = [{imageCourses:"images/courses-image1.jpg"},
                     ]
 let coursesIndex = 0;
 let coursesBigPicture = document.querySelector('.for-768');
-console.log(coursesSlider[0])
 //OVDE CU DA MORAM DA POZOVEM SVE ODJEDNOM
 function changeSlideCourses(other){
     coursesIndex = coursesIndex + other;
@@ -106,7 +104,6 @@ function changeSlideCourses(other){
         coursesIndex = coursesSlider.length -1;
     }
     coursesBigPicture.src = coursesSlider[coursesIndex].imageCourses;
-    console.log(coursesIndex)
 }
 changeSlideCourses(0)
 
@@ -166,11 +163,16 @@ let forThumbnail = [{imageStudents:"images/tst-image1.jpg",
                      propertyForHeading2: "Mirjana"},
 
                      {imageStudents:"images/tst-image4.jpg",
-                     propertyForHeading2: "Camila"}
+                     propertyForHeading2: "NekiLik"},
+
+                     {imageStudents:"images/tst-image3.jpg",
+                     propertyForHeading2: "IstoNeko"},
+
+                     {imageStudents:"images/tst-image2.jpg",
+                     propertyForHeading2: "Stojanka"}
                     ]
 
 forThumbnail.forEach(function(elementContent, index){
-    console.log(elementContent, index)
     let studentPicture = document.getElementById('slika-student')
     let nameOfAStudent = document.getElementById('h2')
     let parent = document.getElementById('wrapper-for-anchors');
@@ -180,7 +182,6 @@ forThumbnail.forEach(function(elementContent, index){
     tacka.style.fontSize = "14px";
     tacka.innerHTML = "<i class='fa'>&#xf192;</i>";
     parent.appendChild(tacka);
-    let hoverTacka = document.querySelector('fa')
  
     /*forThumbnail[index].index = index;
     forThumbnail[index].idKojiSamJaOnakoNpr = "dot-" + index;
@@ -190,16 +191,15 @@ forThumbnail.forEach(function(elementContent, index){
         studentPicture.src = forThumbnail[index].imageStudents;
         nameOfAStudent.textContent = forThumbnail[index].propertyForHeading2;
     })
+    
     let slikaZaHover = document.getElementById('slika-hover');
     tacka.addEventListener('mouseover', function(e){
-        console.log(e.clientX);
-        console.log(e.clientY);
         let divZaPrikaz = document.querySelector('.bez-style');
         slikaZaHover.src = forThumbnail[index].imageStudents;
         divZaPrikaz.classList.add('style');
         let pomeranjeSlike = document.querySelector('.style');
-        pomeranjeSlike.style.left  = e.clientX + 'px';
-        pomeranjeSlike.style.top = e.clientY + 'px';
+        pomeranjeSlike.style.left  = (e.clientX - 50) + 'px';
+        pomeranjeSlike.style.top = (e.clientY - 110) + 'px' ;
     })
 
     tacka.addEventListener('mouseout', function(){

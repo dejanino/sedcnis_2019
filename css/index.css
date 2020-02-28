@@ -890,9 +890,6 @@ textarea {
 }
 .dot {
     text-align: center;
-    width: 15px !important;
-    height: 15px !important;
-    margin-right: 20px;
 }
 .style {
     position: fixed;
@@ -901,7 +898,6 @@ textarea {
     width: 100px !important;
     height: 100px;
     background-color: black;
-    bottom: 100px;
     border: 2px solid green;
     }
 
