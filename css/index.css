@@ -885,15 +885,13 @@ textarea {
 .student-dots {
     position: relative;
 }
-.bez-style{
-    display: none;
-}
+
 .dot {
     text-align: center;
 }
-.style {
+.bez-style {
     position: fixed;
-    display: flex;
+    display: none;
     z-index: 10;
     width: 100px !important;
     height: 100px;
@@ -1003,7 +1001,6 @@ textarea {
     border: 1px solid white;
     cursor: pointer;
 }
-
 
 /* SLIKA */
 

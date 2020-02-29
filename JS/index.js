@@ -154,22 +154,28 @@ dugmeCoursesLevoDesktop.addEventListener("click", function(){
 
 
 let forThumbnail = [{imageStudents:"images/tst-image1.jpg",
-                     propertyForHeading2: "Jackson"},   
-
+                     propertyForHeading2: "Jackson",
+                     stars: 5},   
+                    
                      {imageStudents:"images/tst-image2.jpg",
-                     propertyForHeading2: "Svetlana"},
+                     propertyForHeading2: "Svetlana",
+                     stars: 4},
 
                      {imageStudents:"images/tst-image3.jpg",
-                     propertyForHeading2: "Mirjana"},
+                     propertyForHeading2: "Mirjana",
+                     stars: 5},
 
                      {imageStudents:"images/tst-image4.jpg",
-                     propertyForHeading2: "NekiLik"},
+                     propertyForHeading2: "NekiLik",
+                     stars: 3},
 
                      {imageStudents:"images/tst-image3.jpg",
-                     propertyForHeading2: "IstoNeko"},
+                     propertyForHeading2: "IstoNeko",
+                     stars: 2},
 
                      {imageStudents:"images/tst-image2.jpg",
-                     propertyForHeading2: "Stojanka"}
+                     propertyForHeading2: "Stojanka",
+                     stars: 1}
                     ]
 
 forThumbnail.forEach(function(elementContent, index){
@@ -186,15 +192,27 @@ forThumbnail.forEach(function(elementContent, index){
     /*forThumbnail[index].index = index;
     forThumbnail[index].idKojiSamJaOnakoNpr = "dot-" + index;
     forThumbnail[index].url = "/review-" + index;*/
+    
 
     tacka.addEventListener('click', function(){
         studentPicture.src = forThumbnail[index].imageStudents;
         nameOfAStudent.textContent = forThumbnail[index].propertyForHeading2;
+        let drawingOfStars = document.querySelector('#container-for-stars');
+        let justStars = forThumbnail[index].stars;
+        drawingOfStars.innerHTML = ''
+        for (let counter = 0; counter<justStars; counter++){
+            let zvezdica = document.createElement('a')
+            zvezdica.setAttribute('class', 'one-star')
+            zvezdica.innerHTML = "<i class='fa'>&#xf005;</i>"
+            drawingOfStars.appendChild(zvezdica);
+        }
+        
     })
     
     let slikaZaHover = document.getElementById('slika-hover');
     tacka.addEventListener('mouseover', function(){
         let divZaPrikaz = document.querySelector('.bez-style');
+        divZaPrikaz.style.display = 'flex';
         slikaZaHover.src = forThumbnail[index].imageStudents;
         divZaPrikaz.classList.add('style');
         let pomeranjeSlike = document.querySelector('.style');
@@ -208,7 +226,7 @@ forThumbnail.forEach(function(elementContent, index){
 
     tacka.addEventListener('mouseout', function(){
         let divZaPrikaz = document.querySelector('.bez-style');
-        divZaPrikaz.classList.remove('style');
+        divZaPrikaz.style.display = 'none';
     })
   
 })
