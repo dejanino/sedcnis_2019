@@ -3,6 +3,10 @@ let x = document.querySelector('.h3')
 let paragraph = document.querySelector('.paragraph-slider')
 let anchor = document.querySelector('.anchor')
 
+// ALL ABOUT SLIDER
+let imageIndex = 0; //OVDE MOZE LET DA SE IZBACI VAN JER RADI ASINHRONO!!!!!!!!
+let dugmeDesno = document.querySelector('.dugme-desno') //OVDE MOZE LET DA SE IZBACI VAN JER RADI ASINHRONO!!!!!!!!
+let dugmeLevo = document.querySelector('.dugme-levo') //OVDE MOZE LET DA SE IZBACI VAN JER RADI ASINHRONO!!!!!!!!
 let request1 = new Request("http://pushadmin.dropmind.com/api/slider")
 fetch(request1)
 .then(function(response) {
@@ -11,14 +15,11 @@ fetch(request1)
        
     }
     else{
-        alert("Error")
+        alert("Error, no sliders to show")
     }
 })
 .then(function(slider){
-console.log(slider)
-let imageIndex = 0;
-let dugmeDesno = document.querySelector('.dugme-desno') 
-let dugmeLevo = document.querySelector('.dugme-levo') 
+
 
 function changeSlide(aindex){
     imageIndex = imageIndex + aindex;
@@ -43,9 +44,10 @@ dugmeDesno.addEventListener('click', function(){
 dugmeLevo.addEventListener('click',function(){
     changeSlide(-1);
 });
+
 })
 .catch(function(error){
-    alert(error)
+    console.log(error)
 })
 /*let slider = [{img:"images/slider-image1.jpg",
                tittle: "Something writtten",
@@ -65,23 +67,23 @@ dugmeLevo.addEventListener('click',function(){
               }
             ]*/
 
+//ALL ABOUT DROP DOWN JUST TO HAVE IT
+let navigationBar = document.querySelector('.nav'); 
+//funkcija za gasenje i paljenje
+let dropDownMenu = function() {
+    let navBarInvisible = navigationBar.classList.contains('prikazan-nav');
 
-       let navigationBar = document.querySelector('.nav'); 
-       //funkcija za gasenje i paljenje
-       let dropDownMenu = function() {
-           let navBarInvisible = navigationBar.classList.contains('prikazan-nav');
-       
-           if (navBarInvisible) {
-               navigationBar.classList.remove('prikazan-nav');
-            
-           }
-           else {
-               navigationBar.classList.add('prikazan-nav');
-               
-           }
-       }
-       let anchorClick = document.querySelector('.drop-down-menu');
-       anchorClick.addEventListener('click', dropDownMenu); 
+    if (navBarInvisible) {
+        navigationBar.classList.remove('prikazan-nav');
+    
+    }
+    else {
+        navigationBar.classList.add('prikazan-nav');
+        
+    }
+}
+let anchorClick = document.querySelector('.drop-down-menu');
+anchorClick.addEventListener('click', dropDownMenu); 
 // ODAVDE IDE ZA COURSES
 let divZaSvaJedan = document.getElementById("courses-container-mobile");
 let divZaSvaTri = document.getElementById("courses-container-desktop");
