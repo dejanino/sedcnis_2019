@@ -8,13 +8,14 @@ fetch(request1)
 .then(function(response) {
     if(response.ok){
         return response.json()
+       
     }
     else{
         alert("Error")
     }
 })
-.then(function(object){
- 
+.then(function(slider){
+console.log(slider)
 let imageIndex = 0;
 let dugmeDesno = document.querySelector('.dugme-desno') 
 let dugmeLevo = document.querySelector('.dugme-levo') 
@@ -22,16 +23,16 @@ let dugmeLevo = document.querySelector('.dugme-levo')
 function changeSlide(aindex){
     imageIndex = imageIndex + aindex;
 
-    if (imageIndex > object.length - 1){
+    if (imageIndex > slider.length - 1){
         imageIndex = 0;
     }
     else if (imageIndex < 0){
-        imageIndex = object.length -1;
+        imageIndex = slider.length -1;
     }
-    firstImage.src = object[imageIndex].imageurl;
-    x.innerHTML = object[imageIndex].title;
-    paragraph.innerHTML = object[imageIndex].description;
-    anchor.href = object[imageIndex].url;
+    firstImage.src = slider[imageIndex].imageurl;
+    x.innerHTML = slider[imageIndex].title;
+    paragraph.innerHTML = slider[imageIndex].description;
+    anchor.href = slider[imageIndex].url;
 
 }
 changeSlide(0)
@@ -43,7 +44,9 @@ dugmeLevo.addEventListener('click',function(){
     changeSlide(-1);
 });
 })
-
+.catch(function(error){
+    alert(error)
+})
 /*let slider = [{img:"images/slider-image1.jpg",
                tittle: "Something writtten",
                description: "Something written in paragraphs",
@@ -83,7 +86,7 @@ dugmeLevo.addEventListener('click',function(){
 let divZaSvaJedan = document.getElementById("courses-container-mobile");
 let divZaSvaTri = document.getElementById("courses-container-desktop");
 
-let mediaQuery768 = function(){
+let mediaQuery992 = function(){
     let isMobile = window.matchMedia("(max-width: 992px)");
 
     if(isMobile.matches){
@@ -95,8 +98,8 @@ let mediaQuery768 = function(){
         divZaSvaTri.style.display = "flex";
     }
 }
-window.addEventListener("resize", mediaQuery768);
-mediaQuery768(0);
+window.addEventListener("resize", mediaQuery992);
+mediaQuery992(0);
 
 dugmeCoursesDesno = document.getElementById("dugme-desno-768");
 dugmeCoursesLevo = document.getElementById("dugme-levo-768");
