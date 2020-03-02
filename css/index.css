@@ -891,6 +891,7 @@ footer {
     /* TEXT PREKO SLIKE */
     .slider-text {
         bottom: 100px;
+        padding: 60px;
     }
     /* OFFERS CONTAINER */
     .top-offers {
