@@ -2,7 +2,49 @@ let firstImage = document.querySelector('.background-picture')
 let x = document.querySelector('.h3')
 let paragraph = document.querySelector('.paragraph-slider')
 let anchor = document.querySelector('.anchor')
-let slider = [{img:"images/slider-image1.jpg",
+
+let request1 = new Request("http://pushadmin.dropmind.com/api/slider")
+fetch(request1)
+.then(function(response) {
+    if(response.ok){
+        return response.json()
+    }
+    else{
+        alert("Error")
+    }
+})
+.then(function(object){
+ 
+let imageIndex = 0;
+let dugmeDesno = document.querySelector('.dugme-desno') 
+let dugmeLevo = document.querySelector('.dugme-levo') 
+
+function changeSlide(aindex){
+    imageIndex = imageIndex + aindex;
+
+    if (imageIndex > object.length - 1){
+        imageIndex = 0;
+    }
+    else if (imageIndex < 0){
+        imageIndex = object.length -1;
+    }
+    firstImage.src = object[imageIndex].imageurl;
+    x.innerHTML = object[imageIndex].title;
+    paragraph.innerHTML = object[imageIndex].description;
+    anchor.href = object[imageIndex].url;
+
+}
+changeSlide(0)
+
+dugmeDesno.addEventListener('click', function(){
+    changeSlide(1);
+});
+dugmeLevo.addEventListener('click',function(){
+    changeSlide(-1);
+});
+})
+
+/*let slider = [{img:"images/slider-image1.jpg",
                tittle: "Something writtten",
                description: "Something written in paragraphs",
                url: "#footer"
@@ -18,35 +60,9 @@ let slider = [{img:"images/slider-image1.jpg",
                description: "awsadkasif adfaf",
                url: "#footer"
               }
-            ]
+            ]*/
 
-let imageIndex = 0;
-let dugmeDesno = document.querySelector('.dugme-desno') 
-let dugmeLevo = document.querySelector('.dugme-levo') 
 
-function changeSlide(aindex){
-    imageIndex = imageIndex + aindex;
-
-    if (imageIndex > slider.length - 1){
-        imageIndex = 0;
-    }
-    else if (imageIndex < 0){
-        imageIndex = slider.length -1;
-    }
-    firstImage.src = slider[imageIndex].img;
-    x.innerHTML = slider[imageIndex].tittle;
-    paragraph.innerHTML = slider[imageIndex].description;
-    anchor.href = slider[imageIndex].url;
-
-}
-changeSlide(0)
-
-dugmeDesno.addEventListener('click', function(){
-    changeSlide(1);
-});
-dugmeLevo.addEventListener('click',function(){
-    changeSlide(-1);
-});
        let navigationBar = document.querySelector('.nav'); 
        //funkcija za gasenje i paljenje
        let dropDownMenu = function() {
@@ -84,6 +100,7 @@ mediaQuery768(0);
 
 dugmeCoursesDesno = document.getElementById("dugme-desno-768");
 dugmeCoursesLevo = document.getElementById("dugme-levo-768");
+
 
 let coursesSlider = [{imageCourses:"images/courses-image1.jpg"},             
                      {imageCourses:"images/courses-image2.jpg"},
