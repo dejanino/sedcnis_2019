@@ -28,7 +28,9 @@ anchor.addEventListener("click", nekaTrecaFunkcija)
 
 
 
-parent.appendChild(anchor);​var parent = document.getElementById("parent");
+parent.appendChild(anchor);​
+
+var parent = document.getElementById("parent");
 
 
 

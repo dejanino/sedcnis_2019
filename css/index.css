@@ -635,6 +635,11 @@ textarea {
     color: #3f51b5;
 }
 
+.student-dots-all {
+    display: flex;
+    justify-content: center;
+}
+
 .student-dots {
     display: flex;
     flex-direction: row;
@@ -1197,3 +1202,9 @@ footer {
         color: white;
     }
 }
+
+
+/* position:fixed;
+za kruzice 
+
+display:none */

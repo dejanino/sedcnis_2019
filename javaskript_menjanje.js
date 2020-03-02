@@ -66,7 +66,7 @@ rightArrow.addEventListener('click', function() {
 
 
 
-var slider2 = [{
+var popularCourses = [{
         image: "images/courses-image2.jpg",
         h1: "Efficient Learning Methods",
         p: "prvi opis za slider prvi opis za slider prvi opis za slider prvi opis za slider prvi opis za slider prvi opis za slider ",
@@ -90,33 +90,33 @@ var slider2 = [{
 ];
 let counters = [0, 1, 2];
 
-function slideChange2(index, containerIndex) {
+function changeCourses(index, containerIndex) {
     counters[containerIndex] = counters[containerIndex] + index;
 
-    if (counters[containerIndex] > slider2.length - 1) {
+    if (counters[containerIndex] > popularCourses.length - 1) {
         counters[containerIndex] = 0;
     } else if (counters[containerIndex] < 0) {
-        counters[containerIndex] = slider2.length - 1;
+        counters[containerIndex] = popularCourses.length - 1;
     }
 
     // applyData2(containerIndex);
 
 }
 
-let rightPopularArrow = document.getElementById('right-arrow-courses');
-let leftPopularArrow = document.getElementById('left-arrow-courses');
+let right = document.getElementById('right');
+let left = document.getElementById('left');
 
-rightPopularArrow.addEventListener('click', function() {
+right.addEventListener('click', function() {
     for (let i = 0; i < counters.length; i++) {
-        slideChange2(-1, i);
+        changeCourses(-1, i);
     }
     console.log(counters);
 
 });
 
-leftPopularArrow.addEventListener('click', function() {
+left.addEventListener('click', function() {
     for (let i = 0; i < counters.length; i++) {
-        slideChange2(+1, i);
+        changeCourses(+1, i);
     }
     console.log(counters);
 
