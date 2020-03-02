@@ -10,16 +10,15 @@ let dugmeLevo = document.querySelector('.dugme-levo') //OVDE MOZE LET DA SE IZBA
 let request1 = new Request("http://pushadmin.dropmind.com/api/slider")
 fetch(request1)
 .then(function(response) {
+   
     if(response.ok){
-        return response.json()
-       
+        return response.json();
     }
     else{
-        alert("Error, no sliders to show")
+        alert("Error, no sliders to show");
     }
 })
 .then(function(slider){
-
 
 function changeSlide(aindex){
     imageIndex = imageIndex + aindex;
@@ -34,7 +33,6 @@ function changeSlide(aindex){
     x.innerHTML = slider[imageIndex].title;
     paragraph.innerHTML = slider[imageIndex].description;
     anchor.href = slider[imageIndex].url;
-
 }
 changeSlide(0)
 
@@ -47,7 +45,7 @@ dugmeLevo.addEventListener('click',function(){
 
 })
 .catch(function(error){
-    console.log(error)
+   
 })
 /*let slider = [{img:"images/slider-image1.jpg",
                tittle: "Something writtten",
@@ -84,6 +82,7 @@ let dropDownMenu = function() {
 }
 let anchorClick = document.querySelector('.drop-down-menu');
 anchorClick.addEventListener('click', dropDownMenu); 
+
 // ODAVDE IDE ZA COURSES
 let divZaSvaJedan = document.getElementById("courses-container-mobile");
 let divZaSvaTri = document.getElementById("courses-container-desktop");
@@ -105,19 +104,40 @@ mediaQuery992(0);
 
 dugmeCoursesDesno = document.getElementById("dugme-desno-768");
 dugmeCoursesLevo = document.getElementById("dugme-levo-768");
+let coursesIndex = 0;
+let coursesBigPicture = document.querySelector('.for-768');
+dugmeCoursesDesnoDesktop = document.getElementById("desno-courses");
+dugmeCoursesLevoDesktop = document.getElementById("levo-courses");
+let prvaSlickaDesktop = document.getElementById("first-picture-desktop");
+let drugaSlickaDesktop = document.getElementById("second-picture-desktop");
+let trecaSlickaDesktop = document.getElementById("third-picture-desktop");
+let coursesHeading = document.querySelector('.courses-heading-upper')
+let coursesParagraph = document.querySelector('.courses-paragraph-upper')
 
 
-let coursesSlider = [{imageCourses:"images/courses-image1.jpg"},             
+
+let requestCourses = new Request('http://pushadmin.dropmind.com/api/courses');
+fetch(requestCourses)
+.then(function(test){
+    console.log(test)
+    if(test.ok){
+        return test.json()
+    }
+    else{
+        alert('there is nothing in courses')
+    }
+})
+.then(function(coursesSlider){
+console.log(coursesSlider)
+/*let coursesSlider = [{imageCourses:"images/courses-image1.jpg"},             
                      {imageCourses:"images/courses-image2.jpg"},
                      {imageCourses:"images/courses-image3.jpg"},
                      {imageCourses:"images/courses-image4.jpg"},
                      {imageCourses:"images/courses-image5.jpg"}
-                    ]
-let coursesIndex = 0;
-let coursesBigPicture = document.querySelector('.for-768');
-//OVDE CU DA MORAM DA POZOVEM SVE ODJEDNOM
-function changeSlideCourses(other){
-    coursesIndex = coursesIndex + other;
+                    ]*/
+
+function changeSlideCourses(startingParametarSlider){
+    coursesIndex = coursesIndex + startingParametarSlider;
 
     if (coursesIndex > coursesSlider.length - 1){
         coursesIndex = 0;
@@ -125,7 +145,10 @@ function changeSlideCourses(other){
     else if (coursesIndex < 0){
         coursesIndex = coursesSlider.length -1;
     }
-    coursesBigPicture.src = coursesSlider[coursesIndex].imageCourses;
+    coursesBigPicture.src = coursesSlider[coursesIndex].image;
+    coursesHeading.textContent = coursesSlider[coursesIndex].title;
+    coursesParagraph.textContent = coursesSlider[coursesIndex].description;
+
 }
 changeSlideCourses(0)
 
@@ -135,14 +158,6 @@ dugmeCoursesDesno.addEventListener('click', function(){
 dugmeCoursesLevo.addEventListener('click', function(){
     changeSlideCourses(-1);
 });
-
-
-dugmeCoursesDesnoDesktop = document.getElementById("desno-courses");
-dugmeCoursesLevoDesktop = document.getElementById("levo-courses");
-
-let prvaSlickaDesktop = document.getElementById("first-picture-desktop");
-let drugaSlickaDesktop = document.getElementById("second-picture-desktop");
-let trecaSlickaDesktop = document.getElementById("third-picture-desktop");
 
 let i = 0;
 dugmeCoursesDesnoDesktop.addEventListener("click", function(){
@@ -154,9 +169,9 @@ dugmeCoursesDesnoDesktop.addEventListener("click", function(){
     else {
         i = 0;
     }
-    prvaSlickaDesktop.src = coursesSlider[0].imageCourses;
-    drugaSlickaDesktop.src = coursesSlider[1].imageCourses;
-    trecaSlickaDesktop.src = coursesSlider[2].imageCourses;
+    prvaSlickaDesktop.src = coursesSlider[0].image;
+    drugaSlickaDesktop.src = coursesSlider[1].image;
+    trecaSlickaDesktop.src = coursesSlider[2].image;
 })
 
 let j = 0;
@@ -164,17 +179,16 @@ dugmeCoursesLevoDesktop.addEventListener("click", function(){
     if(j<coursesSlider.length - 1){
         let izbacenSuprotno = coursesSlider.pop()
         coursesSlider.unshift(izbacenSuprotno)
-
     }
     else {
         j = 0;
     }
-    prvaSlickaDesktop.src = coursesSlider[0].imageCourses;
-    drugaSlickaDesktop.src = coursesSlider[1].imageCourses;
-    trecaSlickaDesktop.src = coursesSlider[2].imageCourses;
+    prvaSlickaDesktop.src = coursesSlider[0].image;
+    drugaSlickaDesktop.src = coursesSlider[1].image;
+    trecaSlickaDesktop.src = coursesSlider[2].image;
 })
-
-
+})
+//ODAVDE IDE STUDENT REVIEWS SA ONIM DOLE ELEMENTIMA I HOVEROM
 let forThumbnail = [{imageStudents:"images/tst-image1.jpg",
                      propertyForHeading2: "Jackson",
                      stars: 5},   
@@ -236,10 +250,9 @@ forThumbnail.forEach(function(elementContent, index){
         let divZaPrikaz = document.querySelector('.bez-style');
         divZaPrikaz.style.display = 'flex';
         slikaZaHover.src = forThumbnail[index].imageStudents;
-        divZaPrikaz.classList.add('style');
-        let pomeranjeSlike = document.querySelector('.style');
+        let pomeranjeSlike = document.querySelector('.bez-style');
         let pozicijaTacke = tacka.getBoundingClientRect();
-        let kordinateX = pozicijaTacke.left -15;
+        let kordinateX = pozicijaTacke.left -30;
         let kordinateY = pozicijaTacke.top - 100;
 
         pomeranjeSlike.style.left  = kordinateX + 'px';
@@ -251,6 +264,42 @@ forThumbnail.forEach(function(elementContent, index){
         divZaPrikaz.style.display = 'none';
     })
   
+})
+
+//ZA TEACHER 
+let request2 = new Request("http://pushadmin.dropmind.com/api/teachers")
+fetch(request2)
+.then(function(responseTeacher) {
+   console.log(responseTeacher)
+    if(responseTeacher.ok){
+        return responseTeacher.json();
+    }
+    else{
+        alert("Error, no sliders to show");
+    }
+})
+.then(function(teacher){
+    console.log(teacher)
+    let placeHolderDivTeachers = document.getElementById('teachers-container');
+    let markUp = "";
+    teacher.forEach(element => {
+        markUp+= `
+        <div class="teacher">
+                <div class="teachers-image">
+                    <img src= ${element.avatarurl} alt="image" />
+                </div>
+                <div class="teachers-text">
+                    <h2 class="teachers-heading">${element.name} </h2>
+                    <p class="teachers-paragraph">${element.slogan} </p>
+                </div>
+                <div class="teachers-icons">
+                    <a class="teacher-icon" href="#"><i class="fab fa-facebook-square"></i></a>
+                    <a class="teacher-icon" href="#"><i class="fab fa-twitter"></i></a>
+                    <a class="teacher-icon" href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>`;
+    })
+    placeHolderDivTeachers.innerHTML = markUp;
 })
 
 
