@@ -1,22 +1,41 @@
-var slider = [{
-    image: "images/slider-image1.jpg",
-    title: "Start your journey with our practical courses AAAA",
-    description: "Our online courses are build in partnership with technology leaders and are designed to meet industry demands",
-    url: ""
-},
-{
-    image: "images/slider-image2.jpg",
-    title: "Start your journey with our practical courses 2 ",
-    description: "Our online courses are build in partnership with technology leaders and are designed to meet industry demands",
-    url: ""
-},
-{
-    image: "images/slider-image3.jpg",
-    title: "Start your journey with our practical courses 3",
-    description: "Our online courses are build in partnership with technology leaders and are designed to meet industry demands",
-    url: ""
-}];
+// let slider = [{
+//     image: "images/slider-image1.jpg",
+//     title: "Start your journey with our practical courses AAAA",
+//     description: "Our online courses are build in partnership with technology leaders and are designed to meet industry demands",
+//     url: ""
+// },
+// {
+//     image: "images/slider-image2.jpg",
+//     title: "Start your journey with our practical courses 2 ",
+//     description: "Our online courses are build in partnership with technology leaders and are designed to meet industry demands",
+//     url: ""
+// },
+// {
+//     image: "images/slider-image3.jpg",
+//     title: "Start your journey with our practical courses 3",
+//     description: "Our online courses are build in partnership with technology leaders and are designed to meet industry demands",
+//     url: ""
+// }];
+let request1 = new Request('http://pushadmin.dropmind.com/api/slider', {method: 'GET'});
 
+fetch(request1)
+.then(function(response){
+	if (response.ok) {
+		return response.json();
+	}
+	else {
+		throw 'Response nije ok';
+	}
+})
+.then(function(response){
+    console.log(response);
+    sliderLogic(response);
+})
+.catch(function(greska){
+	console.log('Greska!', greska);
+});
+
+function sliderLogic(slider){
 let currentIndex = 0;
 let prev = document.getElementById("prev");
 let next = document.getElementById("next");
@@ -39,7 +58,7 @@ function changeSlide(index){
         currentIndex = slider.length - 1;
     }
 
-    sliderPhoto.src = slider[currentIndex].image;
+    sliderPhoto.src = slider[currentIndex].imageurl;
     heading.innerHTML = slider[currentIndex].title;
     paragraph.innerHTML = slider[currentIndex].description;
     url.href = slider[currentIndex].url;
@@ -57,10 +76,7 @@ next.addEventListener("click", function(){
     changeSlide(+1);
 });
 
-window/addEventListener("resize", function(){
-    //check window width
-});
-
+}
 
 
 

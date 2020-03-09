@@ -145,9 +145,7 @@
                     <p class="teachers-paragraph">I love Teaching</p>
                 </div>
                 <div class="teachers-icons">
-                    <a class="teacher-icon" href="#"><i class="fab fa-facebook-square"></i></a>
-                    <a class="teacher-icon" href="#"><i class="fab fa-twitter"></i></a>
-                    <a class="teacher-icon" href="#"><i class="fab fa-instagram"></i></a>
+                    
                 </div>
             </div>
             <div class="teacher">
@@ -159,8 +157,7 @@
                     <p class="teachers-paragraph">Education is the key!</p>
                 </div>
                 <div class="teachers-icons">
-                    <a class="teacher-icon" href="#"><i class="fab fa-google"></i></a>
-                    <a class="teacher-icon" href="#"><i class="fab fa-instagram"></i></a>
+                    
                 </div>
             </div>
             <div class="teacher">
@@ -172,9 +169,7 @@
                     <p class="teachers-paragraph">I like Online Courses</p>
                 </div>
                 <div class="teachers-icons">
-                    <a class="teacher-icon" href="#"><i class="fab fa-twitter"></i></a>
-                    <a class="teacher-icon" href="#"><i class="far fa-envelope"></i></a>
-                    <a class="teacher-icon" href="#"><i class="fab fa-linkedin-in"></i></a>
+                   
                 </div>
             </div>
             <div class="teacher">
@@ -186,9 +181,7 @@
                     <p class="teachers-paragraph">Learning is fun</p>
                 </div>
                 <div class="teachers-icons">
-                    <a class="teacher-icon" href="#"><i class="fab fa-twitter"></i></a>
-                    <a class="teacher-icon" href="#"><i class="fab fa-google"></i></a>
-                    <a class="teacher-icon" href="#"><i class="fab fa-behance"></i></a>
+                    
                 </div>
             </div>
         </div>
@@ -200,7 +193,7 @@
                 <p>Upgrade your skills with newest courses</p>
             </div>
             <div class="courses-image">
-                <img src="images/courses-image5.jpg" alt="image" />
+                <img class="photo-mobile" src="images/courses-image5.jpg" alt="image" />
                 <div class="courses-input">
                     <i class="far fa-calendar-alt"></i>
                     <h2>5/10/2018</h2>
@@ -218,9 +211,10 @@
                 <input class="avatar-input" type="submit" value="Free" />
             </div>
             <div class="courses-slider">
-                <i class="far fa-caret-square-left"></i>
-                <i class="far fa-caret-square-right"></i>
+                <a href="#" id="levo" class="far fa-caret-square-left"></a>
+                <a href="#" id="desno" class="far fa-caret-square-right"></a>
             </div>
+           
         </div>
         <div id="courses-container-desktop" class="courses-container">            
             <div class="courses-header">
@@ -229,7 +223,7 @@
             </div>
             <div class="one">
                 <div class="courses-image">
-                    <img src="images/courses-image5.jpg" alt="image" />
+                    <img class="photo-desktop"src="images/courses-image5.jpg" alt="image" />
                     <div class="courses-input">
                         <i class="far fa-calendar-alt"></i>
                         <h2>5/10/2018</h2>
@@ -249,7 +243,7 @@
             </div>
             <div class="one">
                 <div class="courses-image">
-                    <img src="images/courses-image1.jpg" alt="image" />
+                    <img class="photo-desktop" src="images/courses-image1.jpg" alt="image" />
                     <div class="courses-input">
                         <i class="far fa-calendar-alt"></i>
                         <h2>5/10/2018</h2>
@@ -270,7 +264,7 @@
             </div>
             <div class="one">
                 <div class="courses-image">
-                    <img src="images/courses-image3.jpg" alt="image" />
+                    <img class="photo-desktop"src="images/courses-image3.jpg" alt="image" />
                     <div class="courses-input">
                         <i class="far fa-calendar-alt"></i>
                         <h2>5/10/2018</h2>
@@ -289,9 +283,12 @@
                 </div>
             </div>
             <div class="courses-slider">
-                <i class="far fa-caret-square-left"></i>
-                <i class="far fa-caret-square-right"></i>
+                <i class="far fa-caret-square-left" id="levo-courses"></i>
+                <i class="far fa-caret-square-right" id="desno-courses"></i>
             </div>
+
+            
+
         </div>
         <!-- End Courses -->
         <!-- Student Reviewes -->
@@ -303,10 +300,10 @@
             <div class="student-windows">
                 <div class="student-window">
                     <div class="student-avatar">
-                        <img src="images/tst-image1.jpg" alt="image">
+                        <img id="img" src="images/tst-image1.jpg" alt="image">
                         <div class="avatar-text">
-                            <h2>Jackson</h2>
-                            <p>Shopify Developer</p>
+                            <h2 id="ime">Jackson</h2>
+                            <p id="zanimanje">Shopify Developer</p>
                         </div>
                     </div>
                     <div class="student-paragraf">
@@ -361,8 +358,8 @@
                     </div>
                 </div>
             </div>
-            <div class="student-dots">
-                <i class="fas fa-ellipsis-h"></i>
+            <div class="student-dots" id="parent">
+               
             </div>
         </div>
         <!-- End Student Reviews -->
@@ -376,8 +373,8 @@
                 <div class="contact-form-input">
                     <input type="name" name="fullName" id="fullName" placeholder="Enter full name" />
                     <input type="email" name="fullEmail" id="fullEmail" placeholder="Enter email address" />
-                    <textarea placeholder="Tell us about your message"></textarea>
-                    <input class="contact-form-submit" type="submit" value="Send Message" />
+                    <textarea id = "input" placeholder="Tell us about your message"></textarea>
+                    <input  class="contact-form-submit" type="submit" value="Send Message" />
                 </div>
             </div>
             <div class="contact-image">
@@ -429,7 +426,11 @@
         <!-- End Footer Row 3 -->
     </footer>
     <!-- End Footer -->
+    <script src="videos.js"></script>
     <script src="functions.js"></script>
+    <script src="teachers.js"></script>
+    <script src="dots.js"></script>
+    
 </body>
 
 </html>
