@@ -123,9 +123,12 @@
                 </div>
                 <form>
                     <input type="text" name="name" id="name" placeholder="Full Name" />
+                    <p id = 'name_mistake' class= 'zvezdica'>* niste uneli validno ime</p>
                     <input type="email" name="email" id="email" placeholder="Your email address" />
+                    <p id = 'email_mistake' class= 'zvezdica'>* niste uneli validan email</p>
                     <input type="password" name="pw" id="pw" placeholder="Your password" />
-                    <input class="signup-form-submit" type="submit" value="Get started" />
+                    <p id = 'pw_mistake' class= 'zvezdica'>* niste uneli validnu sifru</p>
+                    <input  id= 'sing_up_button' class="signup-form-submit" type="submit" value="Get started" />
                 </form>
             </div>
         </div>
@@ -302,9 +305,9 @@
                 <p>from around the world</p>
             </div>
             <div class="student-windows">
-                <div class="student-window">
+                <div class="student-window-h">
                     <div class="student-avatar">
-                        <img src="images/tst-image1.jpg" alt="image">
+                        <img id= 'slicica' src="images/tst-image1.jpg" alt="image">
                         <div class="avatar-text">
                             <h2>Jackson</h2>
                             <p>Shopify Developer</p>
@@ -322,48 +325,19 @@
                         <i class="fas fa-star"></i>
                     </div>
                 </div>
-                <div class="student-window-h">
-                    <div class="student-avatar">
-                        <img src="images/tst-image4.jpg" alt="image">
-                        <div class="avatar-text">
-                            <h2>Andrio</h2>
-                            <p>Web Developer</p>
-                        </div>
-                    </div>
-                    <div class="student-paragraf">
-                        <p>Nam eget mi eu amte faucibus viterra nec sed magna. Vivamus viverra professional job search
-                            assistance. I'd recommend it to everyone!</p>
-                    </div>
-                    <div class="student-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                </div>
-
-                <div class="student-window-h">
-                    <div class="student-avatar">
-                        <img src="images/tst-image2.jpg" alt="image">
-                        <div class="avatar-text">
-                            <h2>Camila</h2>
-                            <p>Marketing Manager</p>
-                        </div>
-                    </div>
-                    <div class="student-paragraf">
-                        <p>Trying something new is exciting! Thanks for the amazing law course! Sollicitudin quis
-                            felis
-                            vitae hendrerit.</p>
-                    </div>
-                    <div class="student-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                </div>
+                <!---------------------------------------------------------------------------------------------------->
+            
+                <!---------------------------------------------------------------------------------------------------->
+                
             </div>
-            <div class="student-dots">
-                <i class="fas fa-ellipsis-h"></i>
+            <!--<div id="prevdiv"></div>  nemanjino resenje -->
+            <!-- <div id ="parent">
+                <div id = 'parent1'></div> -->
+                <div id ="parent">
+                    <div id = 'parent1'>
+                        <div id='pregled'></div>
+                    </div>
+                <!-- ovde su bile tackice njih kroz js dodajemo sad -->
             </div>
         </div>
         <!-- End Student Reviews -->
