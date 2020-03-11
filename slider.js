@@ -1,3 +1,4 @@
+/*
 var slider = [
   {
     image: "images/slider-image1.jpg",
@@ -18,50 +19,66 @@ var slider = [
     url: "#student-container"
   }
 ];
-
-var currentIndex = 0;
-
-var leftButton = document.getElementById("back");
-var rightButton = document.getElementById("next");
-var sliderImage = document.getElementById("slider-img");
-var sliderTitle = document.getElementById("title");
-//izgubio sam dizajn za h1 posle ovoga
-var sliderParagraf = document.querySelector(".slider-paragraf");
-var sliderBigButton = document.querySelector(".big-button");
-
-function changeSlide(newIndex) {
-
-
-  console.log(currentIndex);
-
-  currentIndex = currentIndex + newIndex;
-
-  /*
-  if (currentIndex > slider.length - 1) {
-    currentIndex = 0;
-  }
-  else if (currentIndex < 0) {
-    currentIndex = slider.length - 1;
-  }
 */
-  if (currentIndex > 2) { currentIndex = 0 };
-  if (currentIndex < 0) { currentIndex = 2 };
-  /*
-  if (currentIndex <= -1) { return currentIndex = 3 };
-  if (currentIndex >= 3) { return currentIndex = -1 };
-  */
+let slider;
+let request1 = new Request("http://pushadmin.dropmind.com/api/slider")
+fetch(request1)
+  .then(function (response) {
+    if (response.ok) {
+      return response.json()
+    }
+    else {
+      alert('Error')
+    }
+  })
+  .then(function (object) {
+    console.log(object);
+    slider = object;
+    var currentIndex = 0;
 
-  sliderImage.src = slider[currentIndex].image;
-  sliderTitle.innerHTML = slider[currentIndex].title;
-  sliderParagraf.innerHTML = slider[currentIndex].description;
-  sliderBigButton.href = slider[currentIndex].url;
-}
+    var leftButton = document.getElementById("back");
+    var rightButton = document.getElementById("next");
+    var sliderImage = document.getElementById("slider-img");
+    var sliderTitle = document.getElementById("title");
+    //izgubio sam dizajn za h1 posle ovoga
+    var sliderParagraf = document.querySelector(".slider-paragraf");
+    var sliderBigButton = document.querySelector(".big-button");
+
+    function changeSlide(newIndex) {
+
+
+      console.log(currentIndex);
+
+      currentIndex = currentIndex + newIndex;
+
+      /*
+      if (currentIndex > slider.length - 1) {
+        currentIndex = 0;
+      }
+      else if (currentIndex < 0) {
+        currentIndex = slider.length - 1;
+      }
+    */
+      if (currentIndex > 2) { currentIndex = 0 };
+      if (currentIndex < 0) { currentIndex = 2 };
+      /*
+      if (currentIndex <= -1) { return currentIndex = 3 };
+      if (currentIndex >= 3) { return currentIndex = -1 };
+      */
+
+      sliderImage.src = slider[currentIndex].imageurl;
+      sliderTitle.innerHTML = slider[currentIndex].title;
+      sliderParagraf.innerHTML = slider[currentIndex].description;
+      sliderBigButton.href = slider[currentIndex].url;
+    }
 
 
 
-leftButton.addEventListener("click", function () {
-  changeSlide(-1);
-});
-rightButton.addEventListener("click", function () {
-  changeSlide(+1);
-});
+    leftButton.addEventListener("click", function () {
+      changeSlide(-1);
+    });
+    rightButton.addEventListener("click", function () {
+      changeSlide(+1);
+    });
+
+  })
