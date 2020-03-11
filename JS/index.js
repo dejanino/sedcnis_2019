@@ -389,19 +389,19 @@ function validateMail(a,b,c,d,formType){
         }
     } 
     if (formType === "contactus"){
-        emailObject.Name = document.getElementById('name').value;
-        emailObject.EmailAddress = document.getElementById('email').value;
+        emailObject.Name = document.getElementById('fullName').value;
+        emailObject.EmailAddress = document.getElementById('fullEmail').value;
         emailObject.Message = document.getElementById('textArea').value;
 
         a = emailObject.Name;
         b = emailObject.EmailAddress;
         c = emailObject.Message;
 
-        if(a === '' || !isEmailValid(b) || c === ''){
-            alert('niste uneli neki podatak')
-        }
-        else {
+        if (a !== "" && isEmailValid(b) && c !== ""){
             sendEmail();
+        }
+        else{
+            alert('niste uneli neki podatak')
         }
 }
 if (formType === "signup"){
