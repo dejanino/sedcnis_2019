@@ -297,3 +297,67 @@ sing_up_button.addEventListener('click', function(event){
         };
     }
 });
+
+let contact_us_button = document.getElementsByClassName('contact-form-submit')[0];
+// ili let contact_us_button = document.querySelector('.contact-form-submit');
+
+let contact_us_name = document.getElementById('fullName');
+let contact_us_email = document.getElementById('fullEmail');
+let contact_us_text = document.getElementById('tekst');
+
+contact_us_button.addEventListener('click', function(event){
+
+    if (contact_us_email.value==='') {
+        event.preventDefault();
+        contact_us_email.placeholder = 'NISTE UNELI MAIL';
+
+        if (contact_us_name.value === ''){
+            contact_us_name.placeholder = 'Niste uneli ime';
+        };
+    }
+    else sendEmail(contact_us_name.value, contact_us_email.value, contact_us_text.value);
+});
+
+/*let x = 5
+let la = function(b){
+    console.log(b)
+}
+let lala = function(b){
+    console.log(b)
+}
+la(x);
+lala(x);
+*/
+
+
+function sendEmail(name, email, message) {
+	const formData = {
+	  'Name': name,
+	  'EmailAddress': email,
+	  'Message': message
+	}
+  
+	let request = new Request('http://xercontrol.com/api/contactus', {
+	  method: 'POST',
+	  body: JSON.stringify(formData),
+	  headers: {
+		'Content-Type': 'application/json',
+	  }
+	});
+  
+	fetch(request)
+	  .then(function (response) {
+		if (response.ok) {
+		  alert("mail sent")
+		}
+		else {
+		  alert("nece biti");
+		}
+	  })
+	  .catch(function (error) {
+		console.log('Error!', error);
+	  });
+  
+  }
+
+
