@@ -414,7 +414,7 @@ if (formType === "signup"){
     b = emailObject.EmailAddress;
     d = emailObject.passWord;
 
-    if (a !== "" && isEmailValid(b) && d !== ""){
+    if (a !== "" && b.indexOf() && d !== "" && d.length>6){
         sendEmail();
     }
     else{
@@ -423,12 +423,12 @@ if (formType === "signup"){
     
 }
 }
+newsletter.addEventListener('click', function(){
+    validateMail(undefined, emailObject.EmailAddress, undefined, undefined, "newsletter");
+})
 submitButton.addEventListener('click', function(){
     validateMail(emailObject.Name, emailObject.EmailAddress, emailObject.Message, undefined, "contactus");
 })
 submitujPrvi.addEventListener('click', function(){
     validateMail(emailObject.Name, emailObject.EmailAddress, undefined, emailObject.passWord, "signup");
-})
-newsletter.addEventListener('click', function(){
-    validateMail(undefined, emailObject.EmailAddress, undefined, undefined, "newsletter");
 })
