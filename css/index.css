@@ -449,11 +449,11 @@ img {
     padding: 20px;
 }  
 
-.signup-form form {
+.signup-form .form {
     width: 80%;
 }
 
-.signup-form form input[type=text], input[type=password], input[type=email] {
+.signup-form .form input[type=text], input[type=password], input[type=email] {
     width: 100%;
 }
 
@@ -519,7 +519,9 @@ textarea {
     flex-direction: column;
     padding: 20px;
 }
-
+.teachers-email{
+    color: black;
+}
 /* TEACHER PROZOR */
 
 .teacher {
@@ -963,6 +965,7 @@ textarea {
 .contact-text {
     padding-bottom: 30px;
     padding-top: 40px;
+    
 }
 
 /* NAME I EMAIL */
@@ -973,6 +976,7 @@ textarea {
     margin-bottom: 15px;
     background-color: white;
     border-radius: 5px;
+    color: black;
 }
 
 /* TEKST */

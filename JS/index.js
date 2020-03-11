@@ -10,7 +10,7 @@ let dugmeLevo = document.querySelector('.dugme-levo') //OVDE MOZE LET DA SE IZBA
 let request1 = new Request("http://pushadmin.dropmind.com/api/slider")
 fetch(request1)
 .then(function(response) {
-   
+
     if(response.ok){
         return response.json();
     }
@@ -19,7 +19,6 @@ fetch(request1)
     }
 })
 .then(function(slider){
-
 function changeSlide(aindex){
     imageIndex = imageIndex + aindex;
 
@@ -228,8 +227,6 @@ forThumbnail.forEach(function(elementContent, index){
     /*forThumbnail[index].index = index;
     forThumbnail[index].idKojiSamJaOnakoNpr = "dot-" + index;
     forThumbnail[index].url = "/review-" + index;*/
-    
-
     tacka.addEventListener('click', function(){
         studentPicture.src = forThumbnail[index].imageStudents;
         nameOfAStudent.textContent = forThumbnail[index].propertyForHeading2;
@@ -286,11 +283,12 @@ fetch(request2)
         markUp+= `
         <div class="teacher">
                 <div class="teachers-image">
-                    <img src= ${element.avatarurl} alt="image" /> 
+                    <img src= ${"http://pushadmin.dropmind.com/" + element.avatarurl} alt="image" /> 
                 </div>
                 <div class="teachers-text">
                     <h2 class="teachers-heading">${element.name} </h2>
                     <p class="teachers-paragraph">${element.slogan} </p>
+                    <a class="teachers-email" href="mailto:${element.email !== "" ? element.email : ""}">${element.email !== "" ? element.email : ""} </a>
                 </div>
                 <div class="teachers-icons">
                     ${ element.twitter !== "" ?
@@ -300,11 +298,121 @@ fetch(request2)
                     ${ element.facebook !== "" ?
                     '<a class="teacher-icon" href="#"><i class="fab fa-facebook-square"></i></a>'
                     : "" 
-                }
+                    }
+                    ${ element.instagram !== "" ?
+                    '<a class="teacher-icon" href="#"><i class="fab fa-instagram"></i></a>'
+                    : "" 
+                    }
+                    ${ element.linkedin !== "" ?
+                    '<a class="teacher-icon" href="#"><i class="fab fa-linkedin"></i></a>'
+                    : "" 
+                    }
+                    ${ element.google !== "" ?
+                    '<a class="teacher-icon" href="#"><i class="fab fa-google"></i></a>'
+                    : "" 
+                    }
                 </div>
             </div>`;
     })
     placeHolderDivTeachers.innerHTML = markUp;
+})
+
+
+//SIGNUP CONTAINER
+let punoIme = document.getElementById('name');
+let emailAdresa = document.getElementById('email');
+emailAdresa.type = "text"
+let passWord = document.getElementById('pw');
+let submitujPrvi = document.querySelector('.signup-form-submit');
+
+// const LocalStorageObject = {
+//     saveList: function() {
+//         localStorage.setItem('name', punoIme.value);
+//     },
+//     loadList: function() {
+//         return localStorage.getItem('name');
+//     }
+// };
+// const podaciZaIme = LocalStorageObject.loadList();
+// if (podaciZaIme) {
+//     punoIme.value = podaciZaIme;
+// }
+
+submitujPrvi.addEventListener('click', function(){
+    if(punoIme.value === ''){
+        punoIme.placeholder = 'niste uneli pravilno ime';
+    }
+    else if(emailAdresa.value.indexOf('@')<0){
+        emailAdresa.value === '';
+        emailAdresa.placeholder = 'email mora sadrzati @';
+    }
+    else if(passWord.value === '' || passWord.value.length<8){
+        passWord.value === '';
+        passWord.placeholder = 'password mora imati najmanje 8 karaktera';
+    }
+    else{
+        // LocalStorageObject.saveList();
+
+    }
+})
+
+
+
+//ZA DONJI KONTAKT
+let fullName = document.getElementById('fullName');
+let fullEmail = document.getElementById('fullEmail');
+let textArea = document.getElementById('textArea');
+let submitButton = document.querySelector('.contact-form-submit');
+
+function isEmailValid(email) {
+	const regex = /(.+)@(.+){2,}\.(.+){2,}/; // string pre @, string sa najmanje 2, karaktera zatim tacka i na kraju opet string sa najmanje 2 karaktera
+	let baseValid = email && email != '';
+	let isValid = baseValid && regex.test(email);
+	return isValid;
+}
+
+function sendEmail(name, email, message){ //univerzalna funkcija da je imam i za gore
+
+    const objekatZaProsledjivanje = {
+        'Name': name,
+        'EmailAddress': email,
+        'Message': message
+    }
+    let requestPost = new Request("http://xercontrol.com/api/contactus",{
+        method: 'POST',
+        body: JSON.stringify(objekatZaProsledjivanje),
+        headers: {
+            'Content-Type': 'application/json'
+          }
+    })
+    fetch(requestPost)
+        .then(function(odgovor){
+            console.log(odgovor)
+            if(odgovor.ok){
+                alert("mail sent")
+            }
+            else{
+                alert("nije poslat")
+            }
+        })
+        .catch(function(error){ //PITANJE: ZASTO KORISTIMO IF OVDE A NE ODMAH CATCH
+            console.log("error" + error)
+        })
+}
+submitButton.addEventListener('click', function(){ //namerno je anonimna, koristim samo za donji deo u aside
+    if(fullName.value === ''){
+        fullName.placeholder = 'niste uneli ime';
+    }
+    else if(isEmailValid(fullEmail.value) !== true){
+        fullEmail.value = '';
+        fullEmail.placeholder = 'niste uneli pravilno email adresu';
+    }
+    else if(textArea.value === ''){
+        textArea.placeholder = 'morate reci nesto o sebi';
+    }
+    else{
+    sendEmail(fullName.value, fullEmail.value, textArea.value);
+    }
 })
 
 
