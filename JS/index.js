@@ -319,11 +319,7 @@ fetch(request2)
 
 
 //SIGNUP CONTAINER
-let punoIme = document.getElementById('name');
-let emailAdresa = document.getElementById('email');
-emailAdresa.type = "text"
-let passWord = document.getElementById('pw');
-let submitujPrvi = document.querySelector('.signup-form-submit');
+
 
 // const LocalStorageObject = {
 //     saveList: function() {
@@ -338,56 +334,36 @@ let submitujPrvi = document.querySelector('.signup-form-submit');
 //     punoIme.value = podaciZaIme;
 // }
 
-submitujPrvi.addEventListener('click', function(){
-    if(punoIme.value === ''){
-        punoIme.placeholder = 'niste uneli pravilno ime';
-    }
-    else if(emailAdresa.value.indexOf('@')<0){
-        emailAdresa.value === '';
-        emailAdresa.placeholder = 'email mora sadrzati @';
-    }
-    else if(passWord.value === '' || passWord.value.length<8){
-        passWord.value === '';
-        passWord.placeholder = 'password mora imati najmanje 8 karaktera';
-    }
-    else{
-        // LocalStorageObject.saveList();
 
-    }
-})
-
-
-
-//ZA DONJI KONTAKT
-let fullName = document.getElementById('fullName');
-let fullEmail = document.getElementById('fullEmail');
-let textArea = document.getElementById('textArea');
+let submitujPrvi = document.querySelector('.signup-form-submit')
 let submitButton = document.querySelector('.contact-form-submit');
+let newsletter = document.querySelector('.newsl-submit')
 
 function isEmailValid(email) {
-	const regex = /(.+)@(.+){2,}\.(.+){2,}/; // string pre @, string sa najmanje 2, karaktera zatim tacka i na kraju opet string sa najmanje 2 karaktera
+	const regex = /(.+)@(.+){2,}\.(.+){2,}/; // unificiran, 
 	let baseValid = email && email != '';
 	let isValid = baseValid && regex.test(email);
 	return isValid;
 }
 
-function sendEmail(name, email, message){ //univerzalna funkcija da je imam i za gore
+const emailObject = {
+    Name: '',
+    EmailAddress: '',
+    Message: '',
+    Password: '',
+    Type: ''
+}
 
-    const objekatZaProsledjivanje = {
-        'Name': name,
-        'EmailAddress': email,
-        'Message': message
-    }
+function sendEmail(){
     let requestPost = new Request("http://xercontrol.com/api/contactus",{
         method: 'POST',
-        body: JSON.stringify(objekatZaProsledjivanje),
+        body: JSON.stringify(emailObject),
         headers: {
             'Content-Type': 'application/json'
           }
     })
     fetch(requestPost)
         .then(function(odgovor){
-            console.log(odgovor)
             if(odgovor.ok){
                 alert("mail sent")
             }
@@ -399,24 +375,60 @@ function sendEmail(name, email, message){ //univerzalna funkcija da je imam i za
             console.log("error" + error)
         })
 }
-submitButton.addEventListener('click', function(){ //namerno je anonimna, koristim samo za donji deo u aside
-    if(fullName.value === ''){
-        fullName.placeholder = 'niste uneli ime';
-    }
-    else if(isEmailValid(fullEmail.value) !== true){
-        fullEmail.value = '';
-        fullEmail.placeholder = 'niste uneli pravilno email adresu';
-    }
-    else if(textArea.value === ''){
-        textArea.placeholder = 'morate reci nesto o sebi';
+function validateMail(a,b,c,d,formType){
+    if (formType === "newsletter"){
+        // validiraj samo email
+        emailObject.EmailAddress = document.querySelector('.newsl-email').value;
+        // ako je valid
+        b = emailObject.EmailAddress;
+        if(isEmailValid(b)){
+            sendEmail(undefined, b, undefined, undefined, formType);
+        }
+        else{
+            alert("nije ok")
+        }
+    } 
+    if (formType === "contactus"){
+        emailObject.Name = document.getElementById('name').value;
+        emailObject.EmailAddress = document.getElementById('email').value;
+        emailObject.Message = document.getElementById('textArea').value;
+
+        a = emailObject.Name;
+        b = emailObject.EmailAddress;
+        c = emailObject.Message;
+
+        if(a === '' || !isEmailValid(b) || c === ''){
+            alert('niste uneli neki podatak')
+        }
+        else {
+            sendEmail(a, b, c);
+        }
+}
+if (formType === "signup"){
+
+    emailObject.Name = document.getElementById('name').value;
+    emailObject.EmailAddress = document.getElementById('email').value;
+    emailObject.passWord = document.getElementById('pw').value;
+
+    a = emailObject.Name;
+    b = emailObject.EmailAddress;
+    d = emailObject.passWord;
+
+    if (a !== "" && isEmailValid(b) && d !== ""){
+        sendEmail(a, b, undefined, d, formType);
     }
     else{
-    sendEmail(fullName.value, fullEmail.value, textArea.value);
+        alert('niste uneli neki podatak')
     }
-})
-
-
     
-
-
-
+}
+}
+submitButton.addEventListener('click', function(){
+    validateMail(emailObject.Name, emailObject.EmailAddress, emailObject.Message, undefined, "contactus");
+})
+submitujPrvi.addEventListener('click', function(){
+    validateMail(emailObject.Name, emailObject.EmailAddress, undefined, emailObject.passWord, "signup");
+})
+newsletter.addEventListener('click', function(){
+    validateMail(undefined, emailObject.EmailAddress, undefined, undefined, "newsletter");
+})
