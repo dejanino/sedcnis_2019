@@ -382,7 +382,7 @@ function validateMail(a,b,c,d,formType){
         // ako je valid
         b = emailObject.EmailAddress;
         if(isEmailValid(b)){
-            sendEmail(undefined, b, undefined, undefined, formType);
+            sendEmail();
         }
         else{
             alert("nije ok")
@@ -401,7 +401,7 @@ function validateMail(a,b,c,d,formType){
             alert('niste uneli neki podatak')
         }
         else {
-            sendEmail(a, b, c);
+            sendEmail();
         }
 }
 if (formType === "signup"){
@@ -415,7 +415,7 @@ if (formType === "signup"){
     d = emailObject.passWord;
 
     if (a !== "" && isEmailValid(b) && d !== ""){
-        sendEmail(a, b, undefined, d, formType);
+        sendEmail();
     }
     else{
         alert('niste uneli neki podatak')
