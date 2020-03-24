@@ -116,7 +116,7 @@ function main (){
         for(var i=0; i < studentStars; i++){  
            let star = document.createElement('i');
                  star.setAttribute('class', 'fas fa-star');
-                 star.setAttribute('ID', 'star');
+                //  star.setAttribute('ID', 'star');
                  console.log(star);
                  studentStarsDiv.appendChild(star);       
             
