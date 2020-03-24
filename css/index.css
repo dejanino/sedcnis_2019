@@ -440,6 +440,20 @@ textarea {
     justify-content: space-evenly;
 }
 
+
+/* .main-teachers-icons {
+    display: flex;
+    /* flex-direction: row; */
+
+
+/* font-size: 18px;
+    line-height: 50px;
+    border-top: 5px solid #f9f9f9;
+    background-color: white;
+    padding: 10px;
+    justify-content: space-evenly;
+}  */
+
 .teacher-icon i {
     color: black;
     width: 35px;

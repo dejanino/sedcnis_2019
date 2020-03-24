@@ -1,5 +1,117 @@
-(function () {
+let main = function () {
     let placeholderDiv = document.getElementById("placeholderDiv");
+
+
+
+    let request2 = new Request("http://pushadmin.dropmind.com/api/teachers");
+
+    fetch(request2)
+
+        .then(function (response) {
+            console.log(response)
+            if (response.ok) {
+                return response.json();
+            } else {
+                alert("Response error");
+            }
+        })
+
+        .then(function (object) {
+            console.log(object);
+            funkcija(object);
+        })
+
+        .catch(function (error) {
+            console.log(error);
+        });
+
+
+    let mainn = document.getElementById("teachers-main");
+
+    let funkcija = function (profesori) {
+
+        profesori.forEach((element) => {
+
+            let imagePrefix = "http://pushadmin.dropmind.com/";
+
+            let glavni = document.createElement('div');
+            glavni.classList.add('teacher');
+            let imageDiv = document.createElement('div');
+            imageDiv.classList.add('teachers-image');
+            let slika = document.createElement('img');
+            slika.setAttribute('src', imagePrefix + element.avatarurl);
+            imageDiv.appendChild(slika);
+
+
+            let ime = document.createElement('div');
+            ime.classList.add('teachers-text');
+            ime.textContent = element.name;
+
+            let slogan = document.createElement('p');
+            slogan.classList.add('teachers-text');
+            slogan.textContent = element.slogan;
+
+            /* let email = document.createElement('email');
+            email.classList.add('email');
+            email.textContent = element.email; */
+
+            let mainTeachersIcons = document.createElement('div');
+            mainTeachersIcons.classList.add('teachers-icons');
+
+
+            let facebook = document.createElement('a');
+            facebook.classList.add('teacher-icon');
+            let fontFb = document.createElement('i');
+            fontFb.classList.add('fab', 'fa-facebook-square');
+            facebook.appendChild(fontFb);
+
+            let twitter = document.createElement('a');
+            twitter.classList.add('teacher-icon');
+            let fontTw = document.createElement('i');
+            fontTw.classList.add('fab', 'fa-twitter-square');
+            twitter.appendChild(fontTw);
+
+            let lnkd = document.createElement('a');
+            lnkd.classList.add('teacher-icon');
+            let fontLi = document.createElement('i');
+            fontLi.classList.add('fab', 'fa-linkedin');
+            lnkd.appendChild(fontLi);
+
+            let instagram = document.createElement('a');
+            instagram.classList.add('teacher-icon');
+            let fontIg = document.createElement('i');
+            fontIg.classList.add('fab', 'fa-instagram');
+            instagram.appendChild(fontIg);
+
+            mainTeachersIcons.appendChild(facebook);
+            // mainTeachersIcons.appendChild(email);
+            mainTeachersIcons.appendChild(twitter);
+            mainTeachersIcons.appendChild(instagram);
+            mainTeachersIcons.appendChild(lnkd);
+
+
+
+            glavni.appendChild(imageDiv);
+            glavni.appendChild(ime);
+            glavni.appendChild(slogan);
+
+            glavni.appendChild(mainTeachersIcons);
+
+            mainn.appendChild(glavni);
+
+            if (ime === "") {
+                ime.textContent = "No name";
+            }
+
+            if (email === "") {
+                email.textContent = "No email";
+            }
+
+            if (slogan === "") {
+                slogan.style.display = 'none';
+            }
+        });
+    };
 
     /*var xmlRequest = new XMLHttpRequest();
 
@@ -19,7 +131,7 @@
     xmlRequest.send();
     } */
 
-    var request = new Request("http://pushadmin.dropmind.com/api/teachers");
+    /* var request = new Request("http://pushadmin.dropmind.com/api/teachers");
 
     fetch(request)
         .then(function (response) {
@@ -46,16 +158,58 @@
                 </div >
                     `;
             });
-        })();
-    }
-)
-    /*     object.forEach(element => {
-            console.log(element);
-        });
-    })
-    .catch(function(error) {
-        console.log(error);
-    }) */
+        })(); */
+
+
+    /* 
+            var request = new Request('http://pushadmin.dropmind.com/api/teachers');
+
+            /* PRAVIM FETCH REQUEST */
+    /*         let allTeachers = [];
+            fetch(request)
+                .then(function(response) {
+
+                    if (response.ok) {
+                        return response.json()
+                    } else alert('response error');
+
+                // })
+                // /* PRAVIM FUNKCIJU */
+    // .then(function(object) {
+    //     console.log(object)
+
+    //     let teachersContainerDiv = document.getElementById("teacher1-container");
+    //     let markup = "";
+
+    //     object.forEach(function(elementNiza, index) {
+
+    //         var anchor = document.createElement('a');
+    //         anchor.setAttribute("class", "dot");
+    //         anchor.setAttribute("href", "javascript:;");
+    //         anchor.innerHTML = '<i class="fas fa-dot-circle"></i>'
+    //         let changeTeachers = function() {
+
+    //                 // ovde trebe napisati funkciju koja ce da poziva razlicite teacher-e
+
+    //             }
+    //              */
+    //         parent.appendChild(anchor);
+
+    //         console.log(changeTeachers)
+
+    //     });
+
+
+    // }) */ */
+
+
+    // /*     object.forEach(element => {
+    //         console.log(element);
+    //     });
+    // })
+    // .catch(function(error) {
+    //     console.log(error);
+    // }) */
 
 
 
@@ -157,37 +311,37 @@
     // } else
     //     currentIndex + 1(+2)
 
-    let popularCourses = [{
-        image: "images/courses-image1.jpg",
-        date: "5/10/2018",
-        time: "",
-        url: ""
-    },
-    {
-        image: "images/courses-image2.jpg",
-        date: "5/10/2018",
-        time: "",
-        url: ""
-    },
-    {
-        image: "images/courses-image3.jpg",
-        date: "5/10/2018",
-        time: "",
-        url: ""
-    },
-    {
-        image: "images/courses-image4.jpg",
-        date: "6/10/2018",
-        time: "",
-        url: ""
-    },
-    {
-        image: "images/courses-image5.jpg",
-        date: "7/10/2018",
-        time: "",
-        url: ""
-    },
-    ];
+    // let popularCourses = [{
+    //     image: "images/courses-image1.jpg",
+    //     date: "5/10/2018",
+    //     time: "",
+    //     url: ""
+    // },
+    // {
+    //     image: "images/courses-image2.jpg",
+    //     date: "5/10/2018",
+    //     time: "",
+    //     url: ""
+    // },
+    // {
+    //     image: "images/courses-image3.jpg",
+    //     date: "5/10/2018",
+    //     time: "",
+    //     url: ""
+    // },
+    // {
+    //     image: "images/courses-image4.jpg",
+    //     date: "6/10/2018",
+    //     time: "",
+    //     url: ""
+    // },
+    // {
+    //     image: "images/courses-image5.jpg",
+    //     date: "7/10/2018",
+    //     time: "",
+    //     url: ""
+    // },
+    // ];
 
     let isMobile = false;
 
@@ -208,35 +362,59 @@
 
 
     //ovde ce index biti 1,2 ili 3 jer prikayujemo tri slike 012, 120 i 012
+
+
+
     let counters = [0, 1, 2];
-
-    function changeCourses(index, containerIndex) {
-        counters[containerIndex] = counters[containerIndex] + index;
-
-        if (counters[containerIndex] > popularCourses.length - 1) {
-            counters[containerIndex] = 0;
-        } else if (counters[containerIndex] < 0) {
-            counters[containerIndex] = popularCourses.length - 1;
+    var fetchCourses = new Request("http://pushadmin.dropmind.com/api/courses");
+    fetch(fetchCourses)
+    .then(function (response) {
+        if (response.ok) {
+            return response.json();
+        } else {
+            alert("Response error");
         }
+    })
+    .then(function (object) {
+        console.log(object);
+        object.forEach(element => {
+            console.log(element);
+        });
+        changeCourses(object);
+    })
+    .catch(function (error) {
+        console.log(error);
+    })
 
-        // applyData2(containerIndex);
+    function changeCourses(sign) {
+        for (let i = 0; i < counters.length; i++) {
+            counters[i] = counters[i] + sign;
+            if (counters[i] > popularCourses.length - 1) {
+                counters[i] = 0;
+            } else if (counters[i] < 0) {
+                counters[i] = popularCourses.length - 1;
+            }
+            applyCounters(i);
+        }
 
     }
+    let mobilePhoto = document.getElementsByClassName("photo-mobile")[0];
+    let desktopPhotos = document.getElementsByClassName("photo-desktop");
+
+    let apiPrefix = "http://pushadmin.dropmind.com/";
+    let applyCounters = function (i) {
+        mobilePhoto.src = apiPrefix + popularCourses[counters[0]].image;
+        desktopPhotos[i].src = apiPrefix + popularCourses[counters[i]].image;
+    }
+    changeCourses(0);
 
     right.addEventListener('click', function () {
-        for (let i = 0; i < counters.length; i++) {
-            changeCourses(-1, i);
-        }
+        changeCourses(-1);
         console.log(counters);
-
     });
 
     left.addEventListener('click', function () {
-        for (let i = 0; i < counters.length; i++) {
-            changeCourses(+1, i);
-        }
-        console.log(counters);
-
+        changeCourses(+1);
     });
 
     window.addEventListener("resize", function () {
@@ -245,69 +423,108 @@
     });
 
 
-
-    changeCourses(0);
-
-    left.addEventListener("click", function () {
-        changeCourses(-1);
-    });
-    right.addEventListener("click", function () {
-        changeCourses(+1);
-    });
-
     //  kreiranje novih elemenata za tacke
 
 
 
-    let reviewsarray = [{
-        image: " ",
-        ime: " ",
-        titula: "",
-        tekst: "Our online courses are build in partnership with technology leaders and are designed to meet industry demands",
-        url: ""
+    // let reviewsarray = [{
+    //         image: " ",
+    //         ime: " ",
+    //         titula: "",
+    //         tekst: "Our online courses are build in partnership with technology leaders and are designed to meet industry demands",
+    //         url: ""
 
-    },
-    {
-        ime: "Andrio",
-        titula: "Web developer",
-        tekst: "Our online courses are build in partnership with technology leaders and are designed to meet industry demands",
-        src: "images/tst-image1.jpg",
-        url: ""
-    },
-    {
-        ime: "Andrio",
-        titula: "Web developer",
-        tekst: "Our online courses are build in partnership with technology leaders and are designed to meet industry demands",
-        src: "images/tst-image1.jpg",
-        url: ""
-    },
-    {
+    //     },
+    //     {
+    //         ime: "Andrio",
+    //         titula: "Web developer",
+    //         tekst: "Our online courses are build in partnership with technology leaders and are designed to meet industry demands",
+    //         src: "images/tst-image1.jpg",
+    //         url: ""
+    //     },
+    //     {
+    //         ime: "Andrio",
+    //         titula: "Web developer",
+    //         tekst: "Our online courses are build in partnership with technology leaders and are designed to meet industry demands",
+    //         src: "images/tst-image1.jpg",
+    //         url: ""
+    //     },
+    //     {
 
-        ime: "Andrio",
-        titula: "Web developer",
-        tekst: "Our online courses are build in partnership with technology leaders and are designed to meet industry demands",
-        src: "images/tst-image1.jpg",
-        url: ""
-    }
-    ];
+    //         ime: "Andrio",
+    //         titula: "Web developer",
+    //         tekst: "Our online courses are build in partnership with technology leaders and are designed to meet industry demands",
+    //         src: "images/tst-image1.jpg",
+    //         url: ""
+    //     }
+    // ];
 
+    let request1 = new Request("http://pushadmin.dropmind.com/api/reviews");
 
+    fetch(request1)
+
+        .then(function (response) {
+            if (response.ok) {
+                return response.json();
+            } else {
+                alert("Response error");
+            }
+        })
+
+        .then(function (object) {
+            console.log(object);
+            applyReviews(object);
+        })
+
+        .catch(function (error) {
+            console.log(error);
+        });
     var parent = document.querySelector('.student-dots-all');
+    let imagePrefix = "http://pushadmin.dropmind.com/";
 
 
+
+    // ovde trebe napisati funkciju koja ce da poziva razlicite elemente u okviru elemenata niza
     // ime, titula, tekst, src, zvezdice
+    let applyReviews = function (reviewsarray) {
+        let changeStudents = function (idx) {
+            let slika = document.getElementById('review-image');
+            slika.src = imagePrefix + reviewsarray[idx].student.imageurl;
 
-    reviewsarray.forEach(function (elementNiza, index) {
+            // let avatarText = document.getElementById('avatar-text');
+            // avatarText.textContent = reviewsarray[idx].student.name;
 
-        var anchor = document.createElement('a');
-        anchor.setAttribute("class", "dot");
-        anchor.setAttribute("href", "javascript:;");
-        anchor.innerHTML = '<i class="fas fa-dot-circle"></i>'
-        let changeStudents = function () {
+            let avatarText1 = document.getElementById('avatar-text-name');
+            avatarText1.textContent = reviewsarray[idx].student.name;
 
-            // ovde trebe napisati funkciju koja ce da poziva razlicite elemente u okviru elemenata niza
+            let avatarText2 = document.getElementById('avatar-text-title');
+            avatarText2.textContent = reviewsarray[idx].student.position;
+
+            let avatarText3 = document.getElementById('student-paragraf-reviewText');
+            avatarText3.textContent = reviewsarray[idx].reviewtext;
+
+            let starsReview = document.querySelector('.student-stars');
+            starsReview.innerHTML = '';
+            for (let i = 0; i < reviewsarray[idx].grade; i++) {
+                let star = document.createElement('i');
+                star.classList.add('fas', 'fa-star');
+                starsReview.appendChild(star);
+            }
+
 
         }
-        anchor.addEventListener("click", changeStudents);
-        parent.appendChild(anchor);
-    });
+        changeStudents(0);
+        reviewsarray.forEach(function (review, index) {
+            console.log(review);
+            var anchor = document.createElement('a');
+            anchor.setAttribute("class", "dot");
+            anchor.setAttribute("href", "javascript:;");
+            anchor.innerHTML = '<i class="fas fa-dot-circle"></i>'
+
+            anchor.addEventListener("click", function () { changeStudents(index) });
+            parent.appendChild(anchor);
+        });
+    };
+
+}
+main();
