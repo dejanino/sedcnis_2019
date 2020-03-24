@@ -7,6 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <script src="https://kit.fontawesome.com/5e430e9e32.js" crossorigin="anonymous"></script>
     <link type="text/css" rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="fontawesome/font-awesome.min.css">
+    
+    
 </head>
 
 <body>
@@ -45,21 +48,27 @@
         <!-- Slider -->
         <div class="slider">
             <div id="slider-image">
-                 <img class="top" src="images/slider-image2.jpg" alt="image"/> 
+                 <img id = "slider-img" class="top" src="images/slider-image1.jpg" alt="image"/>
+                 
                  <!-- <img class="bottom" src="slider-image3.jpg" alt="image"/>
                 <img class="middle" src="slider-image1.jpg" alt="image"/>  -->
             </div>
             <div class="slider-text">
                 <div class="slider-heading">
-                    <h1>Start your journey with our practical courses</h1>
+                    <h1 id="slider-h1">Start your journey with our practical courses</h1>
                 </div>
                 <div class="slider-paragraf">
-                    <p>Our online courses are build in partnership with technology leaders and are designed to meet
+                    <p id="slider-p">Our online courses are build in partnership with technology leaders and are designed to meet
                         industry demands</p>
                 </div>
-                <a href="#contact" class="big-button btn-white">Let's chat</a>
+                <a id="slider-anchor" href="#contact" class="big-button btn-white">Let's chat</a>
                 <!-- <a href="#"><button class="big-button">Take a course</button></a> -->
             </div>
+            
+            <a href="#">
+                <i  id="left-arrow" class="fas fa-arrow-alt-circle-left"></i> 
+                <i  id="right-arrow" class="fas fa-arrow-alt-circle-right"></i>
+            </a>
         </div>
         <!-- End Slider -->
         <!-- Top Offers -->
@@ -136,90 +145,161 @@
             </div>
             <div class="teacher">
                 <div class="teachers-image">
-                    <img src="images/author-image1.jpg" alt="image" />
+                    <img src="" alt="image" class="teacher-image" />
                 </div>
                 <div class="teachers-text">
-                    <h2 class="teachers-heading">Mark Wilson</h2>
+                    <h2 class="teachers-heading"></h2>
                     <p class="teachers-paragraph">I love Teaching</p>
                 </div>
-                <div class="teachers-icons">
-                    <a class="teacher-icon" href="#"><i class="fab fa-facebook-square"></i></a>
+                <!-- <div class="teachers-icons">
+                    <a class="teacher-icon" target="blank" href="https://www.facebook.com"><i class="fab fa-facebook-square"></i></a>
                     <a class="teacher-icon" href="#"><i class="fab fa-twitter"></i></a>
                     <a class="teacher-icon" href="#"><i class="fab fa-instagram"></i></a>
-                </div>
+                </div> -->
             </div>
             <div class="teacher">
                 <div class="teachers-image">
-                    <img src="images/author-image2.jpg" alt="image" />
+                    <img src="" alt="image" class="teacher-image" />
                 </div>
                 <div class="teachers-text">
                     <h2 class="teachers-heading">Catherine</h2>
                     <p class="teachers-paragraph">Education is the key!</p>
                 </div>
-                <div class="teachers-icons">
+                <!-- <div class="teachers-icons">
                     <a class="teacher-icon" href="#"><i class="fab fa-google"></i></a>
                     <a class="teacher-icon" href="#"><i class="fab fa-instagram"></i></a>
-                </div>
+                </div> -->
             </div>
             <div class="teacher">
                 <div class="teachers-image">
-                    <img src="images/author-image3.jpg" alt="image" />
+                    <img src="" alt="image" class="teacher-image" />
                 </div>
                 <div class="teachers-text">
                     <h2 class="teachers-heading">Jessie Ca</h2>
                     <p class="teachers-paragraph">I like Online Courses</p>
                 </div>
-                <div class="teachers-icons">
+                <!-- <div class="teachers-icons">
                     <a class="teacher-icon" href="#"><i class="fab fa-twitter"></i></a>
                     <a class="teacher-icon" href="#"><i class="far fa-envelope"></i></a>
                     <a class="teacher-icon" href="#"><i class="fab fa-linkedin-in"></i></a>
-                </div>
+                </div> -->
             </div>
             <div class="teacher">
                 <div class="teachers-image">
-                    <img src="images/author-image4.jpg" alt="image" />
+                    <img src="" alt="image" class="teacher-image"/>
                 </div>
                 <div class="teachers-text">
                     <h2 class="teachers-heading">Andrew Berti</h2>
                     <p class="teachers-paragraph">Learning is fun</p>
                 </div>
-                <div class="teachers-icons">
+                <!-- <div class="teachers-icons">
                     <a class="teacher-icon" href="#"><i class="fab fa-twitter"></i></a>
                     <a class="teacher-icon" href="#"><i class="fab fa-google"></i></a>
                     <a class="teacher-icon" href="#"><i class="fab fa-behance"></i></a>
-                </div>
+                </div> -->
             </div>
         </div>
         <!-- End Teachers -->
         <!-- Courses -->
-        <div class="courses-container" id="courses-container">
+        <div id="mobile" class="courses-container" id="courses-container">
+            <div class="courses-container" id="courses-container-mobile">
+                <div class="courses-header">
+                    <h2>Popular Courses</h2>
+                    <p>Upgrade your skills with newest courses</p>
+                </div>
+                <div class="courses-image">
+                    <img id="mobile-image" src="images/courses-image5.jpg" alt="image" />
+                    <div class="courses-input">
+                        <i class="far fa-calendar-alt"></i>
+                        <h2 class="courses-date">5/10/2018</h2>
+                        <i class="far fa-clock"></i>
+                        <h2 class="courses-date">10 Hours</h2>
+                    </div>
+                </div>
+                <div class="courses-text">
+                    <h2 id="mobile-courses-text">Bussines & Management</h2>
+                    <p id ="mobile-courses-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                </div>
+                <div class="courses-avatar">
+                    <img id ="avatar-image" src="images/author-image2.jpg" alt="image">
+                    <p id="avatar-name">Jessica</p>
+                    <input class="avatar-input" type="submit" value="Free" />
+                </div>
+            </div>
+        <div id="courses-container-desktop" class="courses-container">            
             <div class="courses-header">
                 <h2>Popular Courses</h2>
                 <p>Upgrade your skills with newest courses</p>
             </div>
-            <div class="courses-image">
-                <img src="images/courses-image5.jpg" alt="image" />
-                <div class="courses-input">
-                    <i class="far fa-calendar-alt"></i>
-                    <h2>5/10/2018</h2>
-                    <i class="far fa-clock"></i>
-                    <h2>10 Hours</h2>
+            <div class="one">
+                <div class="courses-image">
+                    <img src="images/courses-image5.jpg" alt="image" class="course-image" />
+                    <div class="courses-input">
+                        <i class="far fa-calendar-alt"></i>
+                        <h2 class="courses-date">5/10/2018</h2>
+                        <i class="far fa-clock"></i>
+                        <h2 class="courses-date">10 Hours</h2>
+                    </div>
+                </div>
+                <div class="courses-text">
+                    <h2 class="course-title">Bussines & Management</h2>
+                    <p class="courses-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                </div>
+                <div class="courses-avatar">
+                    <img class="image-avatar"  src="images/author-image2.jpg" alt="image">
+                    <p class="avatar-name">Jessica</p>
+                    <input class="avatar-input" type="submit" value="Free" />
                 </div>
             </div>
-            <div class="courses-text">
-                <h2>Bussines & Management</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            <div class="one">
+                <div class="courses-image">
+                    <img src="images/courses-image1.jpg" alt="image" class="course-image" />
+                    <div class="courses-input">
+                        <i class="far fa-calendar-alt"></i>
+                        <h2 class="courses-date">5/10/2018</h2>
+                        <i class="far fa-clock"></i>
+                        <h2 class="courses-date">10 Hours</h2>
+                    </div>
+                </div>
+                <div class="courses-text">
+                    <h2 class="course-title">Bussines & Management</h2>
+                    <p class="courses-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                </div>
+                <div class="courses-avatar">
+                    <img class="image-avatar" src="images/author-image2.jpg" alt="image" >
+                    <p class="avatar-name">Jessica</p>
+                    <input class="avatar-input" type="submit" value="Free" />
+                </div>
+                
             </div>
-            <div class="courses-avatar">
-                <img src="images/author-image2.jpg" alt="image">
-                <p>Jessica</p>
-                <input class="avatar-input" type="submit" value="Free" />
+            <div class="one">
+                <div class="courses-image">
+                    <img src="images/courses-image3.jpg" alt="image" class="course-image"/>
+                    <div class="courses-input">
+                        <i class="far fa-calendar-alt"></i>
+                        <h2 class="courses-date" > 5/10/2018</h2>
+                        <i class="far fa-clock"></i>
+                        <h2 class="courses-date">10 Hours</h2>
+                    </div>
+                </div>
+                <div class="courses-text">
+                    <h2 class="course-title">Bussines & Management</h2>
+                    <p class="courses-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                </div>
+                <div class="courses-avatar">
+                    <img class="image-avatar" src="images/author-image2.jpg" alt="image">
+                    <p class="avatar-name">Jessica</p>
+                    <input class="avatar-input" type="submit" value="Free" />
+                </div>
             </div>
-            <div class="courses-slider">
-                <i class="far fa-caret-square-left"></i>
-                <i class="far fa-caret-square-right"></i>
-            </div>
+            
         </div>
+        <div class="courses-slider">
+            <i id ="previous-arrow" class="far fa-caret-square-left"></i>
+            <i id = "next-arrow" class="far fa-caret-square-right"></i>
+        </div>
+
+        
         <!-- End Courses -->
         <!-- Student Reviewes -->
         <div class="student-container" id="student-container">
@@ -230,25 +310,31 @@
             <div class="student-windows">
                 <div class="student-window">
                     <div class="student-avatar">
-                        <img src="images/tst-image1.jpg" alt="image">
+                        <img class="avatar-image" src="images/tst-image1.jpg" alt="image">
                         <div class="avatar-text">
-                            <h2>Jackson</h2>
-                            <p>Shopify Developer</p>
+                            <h2 class = "name-of-student">Jackson</h2>
+                            <p class="avatar-title">Shopify Developer</p>
                         </div>
                     </div>
                     <div class="student-paragraf">
-                        <p>You do really help young creative minds to get quality education and professional job search
+                        <p class="avatar-paragraf">You do really help young creative minds to get quality education and professional job search
                             assistance. I'd recommend it to everyone!</p>
                     </div>
                     <div class="student-stars">
+                        <!-- <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i> -->
+                    </div>
+                    <div class="dots-class">
+                        <div class = dots-div>
+                            <img src="images/tst-image1.jpg" alt="" class="dots-image">
+                        </div>
+
                     </div>
                 </div>
-                <div class="student-window-h">
+                <!-- <div class="student-window-h">
                     <div class="student-avatar">
                         <img src="images/tst-image4.jpg" alt="image">
                         <div class="avatar-text">
@@ -265,9 +351,9 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </div>
-                </div>
+                </div> -->
 
-                <div class="student-window-h">
+                <!-- <div class="student-window-h">
                     <div class="student-avatar">
                         <img src="images/tst-image2.jpg" alt="image">
                         <div class="avatar-text">
@@ -286,11 +372,11 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </div>
-                </div>
-            </div>
+                </div> -->
+            <!-- </div>
             <div class="student-dots">
                 <i class="fas fa-ellipsis-h"></i>
-            </div>
+            </div> -->
         </div>
         <!-- End Student Reviews -->
         <!-- Contact Us -->
@@ -303,7 +389,7 @@
                 <div class="contact-form-input">
                     <input type="name" name="fullName" id="fullName" placeholder="Enter full name" />
                     <input type="email" name="fullEmail" id="fullEmail" placeholder="Enter email address" />
-                    <textarea placeholder="Tell us about your message"></textarea>
+                    <textarea id="txtArea" placeholder="Tell us about your message"></textarea>
                     <input class="contact-form-submit" type="submit" value="Send Message" />
                 </div>
             </div>
@@ -356,6 +442,11 @@
         <!-- End Footer Row 3 -->
     </footer>
     <!-- End Footer -->
+    <script src="js/projekat.js"></script>
+    <script src="js/projekat-popularcourses.js"></script>
+    <script src="js/student-reviews.js"></script>
+    <script src="js/signup-form.js"></script>
+    <script src="js/teachers.js"></script>
 </body>
 
 </html>

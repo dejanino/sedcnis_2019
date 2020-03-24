@@ -41,6 +41,22 @@ a {
     height: 100%;
 }
 
+#left-arrow, #right-arrow {
+    position: absolute;
+    top: 40%;
+    font-size: 50px;
+    color: white;
+    z-index: 1;
+}
+#left-arrow {
+   left : 1%;
+}
+
+#right-arrow {
+    right: 1%;
+}
+
+
 .nav .menu a li:hover {
     color: white;
     background-color: #29ca8e;
@@ -78,7 +94,6 @@ a {
     width: 100%;
     margin:0 auto;
 }
-
 #slider-slike img {
     position:absolute;
     left:0;
@@ -87,7 +102,6 @@ a {
     -o-transition: opacity 3s ease-in-out;
     transition: opacity 3s ease-in-out;
 }
-
 #slider-slike img.top {
     animation-name: cf3FadeInOut;
     animation-timing-function: ease-in-out;
@@ -96,7 +110,6 @@ a {
     animation-direction: alternate;
     animation-delay: 6s;
 }
-
 #slider-slike img.middle {
     animation-name: cf3FadeInOut;
     animation-timing-function: ease-in-out;
@@ -105,7 +118,6 @@ a {
     animation-direction: alternate;
     animation-delay: 4s;
 }
-
 #slider-slike img.bottom {
     animation-name: cf3FadeInOut;
     animation-timing-function: ease-in-out;
@@ -114,7 +126,6 @@ a {
     animation-direction: alternate;
     animation-delay: 2s;
 }
-
 @keyframes cf3FadeInOut {
     0% {
       opacity:1;
@@ -281,7 +292,7 @@ img {
 
 .signup-form {
     background-color: #252020;
-    color: white;
+    color: black;
     text-align: center;
     width: 100%;
     display: flex;
@@ -289,6 +300,11 @@ img {
     align-items: center;
     padding: 20px;
 }  
+
+.signup-alert {
+    background-color: white;
+    color: red;
+}
 
 .signup-form form {
     width: 80%;
@@ -318,7 +334,7 @@ input {
     border: none;
     border-bottom: 1px solid lightgrey;
     width: 80%;
-    color: white;
+    color: black
     padding-left: 10px;
     height: 45px;
     font-size: 16px;
@@ -429,6 +445,12 @@ textarea {
     width: 100%;
 }
 
+#previous-arrow, #next-arrow {
+    cursor: pointer;
+}
+#previous-arrow:hover, #next-arrow:hover {
+    background-color:  #ebebe0
+}
 /* HEADER */
 
 .courses-header {
@@ -590,7 +612,7 @@ textarea {
     color: #3f51b5;
 }
 
-.student-dots {
+.student-dots, .dots-class {
     display: flex;
     flex-direction: row;
     padding: 50px 100px 50px 100px;
@@ -598,6 +620,26 @@ textarea {
     font-size: 30px;
     color: grey;
 }
+.dots-class {
+    position: relative;
+}
+.dots-div {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 10px;
+    left: 0px;
+    display: none;
+}
+.dots-image{
+    border-radius: 30px;
+    /* transform: translate(-100%, -20px); */
+    
+}
+.dots-image-on {
+    display: inline-block;
+}
+
 
 /* CONTACT CONTAINER */
 
@@ -607,6 +649,7 @@ textarea {
     background-color: #3f51b5;
     color: white;
     padding: 20px;
+    
 }
 
 .contact-text {
@@ -1037,6 +1080,10 @@ footer {
 
 }
 
+#courses-container-desktop {
+    display: none;
+}
+
 @media screen and (min-width:992px) {
 
     header {
@@ -1112,10 +1159,33 @@ footer {
         line-height: 35px;
         text-align: center;
     }
-    
+    #courses-container-mobile{
+        display: none;
+    }
+    #courses-container-desktop{
+        display: flex;
+    }
+
+    .courses-header{
+        width: 100%;
+        display: inline-block;
+
+    }
 
     .courses-container {
         padding: 0 calc((100% - 900px) / 2);
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+
+    .courses-container .one{
+        width: calc(100% / 3);
+    }
+
+    .avatar-input {
+        margin-left: 10px !important;
+        padding: 0 20px;
     }
 
     .contact-container {
@@ -1175,10 +1245,12 @@ footer {
     }
 
     .student-window {
-        width: 33.33%;
+        /* width: 33.33%; */
         margin-right: 10px;
         background-color: white;
+        width: 100%;
         position:
+        
     }
 
     .student-window-h {
